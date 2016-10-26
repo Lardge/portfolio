@@ -1,14 +1,13 @@
 'use strict';
-var allDirectivesLoaded = false;
 /* Directives */
 app.directive('header', function () {
     return {
         templateUrl: '../html/header.html'
     };
 });
-app.directive('indexbanner', function () {
+app.directive('home', function () {
     return {
-        templateUrl: '../html/banner.html'
+        templateUrl: '../html/home.html'
     };
 });
 app.directive('section1', function () {

@@ -5635,7 +5635,7 @@ Modules - reusable parts of our design
 }
 @font-face {
   font-family: 'BebasNeue';
-  src: url('/font/bebasneue-webfont.woff2') format('woff2'), url('/font/bebasneue-webfont.woff') format('woff');
+  src: url('/font/BebasNeue/bebasneue-webfont.woff2') format('woff2'), url('/font/BebasNeue/bebasneue-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -5667,23 +5667,34 @@ Modules - reusable parts of our design
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'KGHappy';
+  src: url('/font/KGHappy/KGHAPPY.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* h1,h2,h3 */
 h1 {
   font-family: "BebasNeue", "Montserrat";
   font-size: 5em;
   line-height: 100%;
 }
-html {
+html,
+body,
+.section,
+.content {
   font-weight: 300;
+  height: 100%;
+  line-height: 100%;
+}
+div {
+  line-height: 100%;
 }
 .light-teal-text {
   color: #08d198 !important;
 }
 .teal-text {
   color: #018a75 !important;
-}
-div {
-  height: 100%;
 }
 p {
   line-height: 1.6em;
@@ -5701,6 +5712,24 @@ img {
   color: white;
   font-weight: bold;
 }
+.halign {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.valign-parent {
+  position: relative;
+}
+.valign-parent .valign {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.valign-parent .valign.halign {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 header {
   width: 100%;
   min-height: 70px;
@@ -5717,8 +5746,8 @@ header nav ul li {
 }
 header nav ul a {
   color: #fff;
-  max-height: 65px;
-  max-width: 65px;
+  height: 65px;
+  width: 65px;
   transition: 0.5s;
   padding: 15px;
 }
@@ -5728,35 +5757,41 @@ header nav ul a:hover {
 header nav .brand-logo {
   color: #444;
 }
-indexbanner {
+home {
   display: block;
 }
-indexbanner #banner {
+home #home {
   margin: 0px;
   background: none !important;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   height: 600px;
 }
-indexbanner #banner .banner-bg {
+home #home .page-title {
+  font-family: "KGHappy";
+  font-size: 7em;
+  text-align: center;
+  width: 720px;
+}
+home #home .home-bg {
   background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
   background: url('/img/backgrounds/flat2.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /*-webkit-animation: gradientAnimation 50s ease-in-out infinite;
--moz-animation: gradientAnimation 50s ease-in-out infinite;
-animation: gradientAnimation 50s ease-in-out infinite;
-transform: translateZ(0);
--webkit-transform: translateZ(0);
--ms-transform: translateZ(0);*/
 }
-indexbanner #banner .portrait {
-  width: 200px;
-  height: 200px;
+home #home .portrait-frame {
+  width: 350px;
+  height: 350px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: none;
+  overflow: hidden;
+}
+home #home .portrait-frame img {
+  filter: contrast(150%);
 }
 /* button-collapse*/
 .button-collapse {
@@ -5809,9 +5844,6 @@ indexbanner #banner .portrait {
 }
 .parallax-container .section {
   width: 100%;
-}
-.card {
-  min-height: 300px;
 }
 .card .card-content .card-title {
   line-height: 30px;
