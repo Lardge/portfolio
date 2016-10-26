@@ -1,11 +1,11 @@
 <div class="navbar">
-    <nav id="nav" class="no-bg-shadow valign-parent" role="navigation">
-        <div class="nav-wrapper container">
-            <ul class="right hide-on-med-and-down">
-                <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse valign"> <a data-scroll href="#section-1" class="hvr-outline-in">{{navItem.title}}</a> </li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse"> <a data-scroll href="#section-1" class="hvr-outline-in">{{navItem.title}}</a> </li>
-            </ul> <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a> </div>
-    </nav>
+    <nav id="nav" class="no-bg-shadow" role="navigation">
+        <ul class="right hide-on-med-and-down">
+            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse">
+                <a data-scroll href="#section-{{navItem.id}}" class="hvr-outline-in"> <img src="{{navItem.img}}" /></a>
+            </li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse"> <a data-scroll href="#section-1" class="hvr-outline-in">{{navItem.title}}</a> </li>
+        </ul> <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a> </nav>
 </div>

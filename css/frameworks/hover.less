@@ -2564,14 +2564,17 @@
 }
 
 .hvr-outline-out:before {
+    pointer-events: none;
     content: '';
     position: absolute;
-    border: white solid 2px;
+    //border: rgba(255, 255, 255, 0.8) solid 4px;
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    opacity: 0;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
     -webkit-transition-property: all;
@@ -2606,7 +2609,8 @@
     pointer-events: none;
     content: '';
     position: absolute;
-    border: white solid 2px;
+    //border: rgba(255, 255, 255, 0.8) solid 4px;
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     top: -16px;
     right: -16px;

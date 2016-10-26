@@ -3,17 +3,17 @@
         {
             "id": "1"
             , "title": "Home"
-            , "img": "/img/man-standing-with-arms-up.svg"
+            , "img": "/img/svg/home-new5.svg"
         }
         , {
             "id": "2"
             , "title": "Timeline"
-            , "img": "/img/man-standing-with-arms-up.svg"
+            , "img": "/img/svg/user-new.svg"
         }
         , {
             "id": "3"
             , "title": "Projects"
-            , "img": "/img/man-standing-with-arms-up.svg"
+            , "img": "/img/svg/play-button.svg"
         }
     ]
 }

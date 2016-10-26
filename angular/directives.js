@@ -42,7 +42,7 @@ app.directive('section6', function () {
 });
 app.directive('timeline', function () {
     return {
-        templateUrl: '../vertical-timeline/index.html'
+        templateUrl: '../html/timeline.html'
     };
 });
 app.directive('sectionfooter', function () {

@@ -1,8 +1,7 @@
 // MIXINS
 @nav-height: 100px;
-
-/* h1,h2,h3 */
-
+@content-width: 920px;
+// GLOBAL //
 h1 {
     font-family: "BebasNeue", "Montserrat";
     font-size: 5em;
@@ -18,20 +17,14 @@ body,
     line-height: 100%;
 }
 
+.section,
+.content {
+    width: @content-width;
+    margin: 0 auto;
+}
+
 div {
     line-height: 100%;
-}
-
-.light-teal-text {
-    color: #08d198 !important;
-}
-
-.teal-text {
-    color: #018a75 !important;
-}
-
-div {
-    //height: 100%;
 }
 
 p {
@@ -74,28 +67,39 @@ img {
     }
 }
 
+header,
+home,
+timeline {
+    display: block;
+}
+
 // HEADER & NAV //
 header {
     width: 100%;
     min-height: 70px;
     position: absolute;
     nav {
+        width: @content-width;
+        margin: 0 auto;
         height: @nav-height;
         line-height: @nav-height;
         ul {
             li {
-                max-height: 65px;
-                max-width: 65px;
+                //max-height: 65px;
+                //max-width: 65px;
                 overflow: visible !important;
-            }
-            a {
-                color: #fff;
-                height: 65px;
-                width: 65px;
-                transition: 0.5s;
-                padding: 15px;
-                &:hover {
-                    background: none;
+                a {
+                    color: #fff;
+                    height: 65px;
+                    width: 65px;
+                    transition: 0.5s;
+                    padding: 15px;
+                    &:hover {
+                        background: none;
+                    }
+                    img {
+                        display: block;
+                    }
                 }
             }
         }
@@ -107,7 +111,6 @@ header {
 
 // BANNER //
 home {
-    display: block;
     #home {
         margin: 0px;
         background: none !important;
@@ -121,15 +124,9 @@ home {
             text-align: center;
             width: 720px;
         }
-        .home-bg {
-            background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
-            background: url('/img/backgrounds/flat2.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
         .portrait-frame {
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
             position: absolute;
             bottom: 0%;
             left: 50%;
@@ -140,7 +137,19 @@ home {
                 filter: contrast(150%);
             }
         }
+        .home-bg {
+            background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
+            background: url('/img/backgrounds/flat2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     }
+}
+
+// TIMELINE //
+timeline {
+    padding: 150px 0px 0px 0px;
+    background: #f2f2f2;
 }
 
 
@@ -326,18 +335,16 @@ footer.page-footer {
     transform: translateY(-42%);
 }
 
-img {
-    //opacity: 0;
-    //-moz-transition: opacity 2s;
-    /* Firefox 4 */
-    //-webkit-transition: opacity 2s;
-    /* Safari and Chrome */
-    //-o-transition: opacity 2s;
-    //transition: opacity 2s;
-}
-
 .opacity-1 {
     opacity: 1;
+}
+
+.light-teal-text {
+    color: #08d198 !important;
+}
+
+.teal-text {
+    color: #018a75 !important;
 }
 
 .side-nav a {
@@ -867,44 +874,6 @@ svg:not(:root) {
         background: linear-gradient(teal, rgba(255, 255, 0, 0));
     }
 }
-
-
-/*
-@-webkit-keyframes gradientAnimation {
-0% {
-    background-position: 0% 50%
-}
-50% {
-    background-position: 100% 50%
-}
-100% {
-    background-position: 0% 50%
-}
-}
-
-@-moz-keyframes gradientAnimation {
-0% {
-    background-position: 0% 50%
-}
-50% {
-    background-position: 100% 50%
-}
-100% {
-    background-position: 0% 50%
-}
-}
-
-@keyframes gradientAnimation {
-0% {
-    background-position: 0% 50%
-}
-50% {
-    background-position: 100% 50%
-}
-100% {
-    background-position: 0% 50%
-}
-}*/
 
 //CLOUDS
 #cloud {
