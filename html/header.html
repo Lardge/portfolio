@@ -1,8 +1,13 @@
 <div class="navbar">
     <nav id="nav" class="no-bg-shadow" role="navigation">
-        <ul class="right hide-on-med-and-down">
+        <ul id="bg-list" class="left hide-on-med-and-down">
+            <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse">
+                <div class="btn-floating btn-large circle bg-frame waves-effect waves-light " ng-style="{'background-image': 'url(' + bgItem.img + ')'}" ng-click="changeBackground(bgItem.img)"> </div>
+            </li>
+        </ul>
+        <ul id="link-list" class="right hide-on-med-and-down">
             <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse">
-                <a data-scroll href="#section-{{navItem.id}}" class="hvr-outline-in"> <img src="{{navItem.img}}" /></a>
+                <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in"> <img src="{{navItem.img}}" /></a>
             </li>
         </ul>
         <ul id="nav-mobile" class="side-nav">

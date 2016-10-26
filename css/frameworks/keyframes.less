@@ -4,6 +4,32 @@ keyframes
 
 -------------------------------- */
 
+// KEYFRAME ANIMATION CLASSE
+.smooth-entry-reverse {
+    -webkit-animation: smooth-entry-reverse 0.5s;
+    -moz-animation: smooth-entry-reverse 0.5s;
+    animation: smooth-entry-reverse 0.5s;
+}
+
+// KEYFRAME ANIMATION CLASSE
+.smooth-entry-title {
+    -webkit-animation: smooth-entry-title 0.5s;
+    -moz-animation: smooth-entry-title 0.5s;
+    animation: smooth-entry-title 0.5s;
+}
+
+.smooth-entry-reverse-title {
+    -webkit-animation: smooth-entry-reverse-title 0.5s;
+    -moz-animation: smooth-entry-reverse-title 0.5s;
+    animation: smooth-entry-reverse-title 0.5s;
+}
+
+.smooth-entry-reverse-portrait {
+    -webkit-animation: smooth-entry-reverse-portrait 0.5s;
+    -moz-animation: smooth-entry-reverse-portrait 0.5s;
+    animation: smooth-entry-reverse-portrait 0.5s;
+}
+
 @-webkit-keyframes smooth-entry {
     0% {
         opacity: 0;
@@ -469,5 +495,88 @@ keyframes
         -o-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+//KEYFRAME FOR PORTRAIT AND PAGE-TITLE
+@-webkit-keyframes smooth-entry-reverse-title {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@-moz-keyframes smooth-entry-reverse-title {
+    0% {
+        opacity: 0;
+        -moz-transform: translate(-50%, -55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes smooth-entry-reverse-title {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -55%);
+        -moz-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+        -o-transform: translate(-50%, -55%);
+        transform: translate(-50%, -55%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+@-webkit-keyframes smooth-entry-reverse-portrait {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, 55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@-moz-keyframes smooth-entry-reverse-portrait {
+    0% {
+        opacity: 0;
+        -moz-transform: translate(-50%, 55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@keyframes smooth-entry-reverse-portrait {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, 55%);
+        -moz-transform: translate(-50%, 55%);
+        -ms-transform: translate(-50%, 55%);
+        -o-transform: translate(-50%, 55%);
+        transform: translate(-50%, 55%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, 50%);
+        -moz-transform: translate(-50%, 50%);
+        -ms-transform: translate(-50%, 50%);
+        -o-transform: translate(-50%, 50%);
+        transform: translate(-50%, 50%);
     }
 }

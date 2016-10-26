@@ -2,17 +2,17 @@
     "navItems": [
         {
             "id": "1"
-            , "title": "Home"
+            , "title": "home"
             , "img": "/img/svg/home-new5.svg"
         }
         , {
             "id": "2"
-            , "title": "Timeline"
+            , "title": "timeline"
             , "img": "/img/svg/user-new.svg"
         }
         , {
             "id": "3"
-            , "title": "Projects"
+            , "title": "projects"
             , "img": "/img/svg/play-button.svg"
         }
     ]

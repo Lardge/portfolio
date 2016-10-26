@@ -45,9 +45,9 @@ app.directive('timeline', function () {
         templateUrl: '../html/timeline.html'
     };
 });
-app.directive('sectionfooter', function () {
+app.directive('ngfooter', function () {
     return {
-        templateUrl: '../html/section-footer.html'
+        templateUrl: '../html/footer.html'
     };
 });
 app.directive('init', function () {

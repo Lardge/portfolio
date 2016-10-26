@@ -4801,6 +4801,26 @@
 keyframes
 
 -------------------------------- */
+.smooth-entry-reverse {
+  -webkit-animation: smooth-entry-reverse 0.5s;
+  -moz-animation: smooth-entry-reverse 0.5s;
+  animation: smooth-entry-reverse 0.5s;
+}
+.smooth-entry-title {
+  -webkit-animation: smooth-entry-title 0.5s;
+  -moz-animation: smooth-entry-title 0.5s;
+  animation: smooth-entry-title 0.5s;
+}
+.smooth-entry-reverse-title {
+  -webkit-animation: smooth-entry-reverse-title 0.5s;
+  -moz-animation: smooth-entry-reverse-title 0.5s;
+  animation: smooth-entry-reverse-title 0.5s;
+}
+.smooth-entry-reverse-portrait {
+  -webkit-animation: smooth-entry-reverse-portrait 0.5s;
+  -moz-animation: smooth-entry-reverse-portrait 0.5s;
+  animation: smooth-entry-reverse-portrait 0.5s;
+}
 @-webkit-keyframes smooth-entry {
   0% {
     opacity: 0;
@@ -5234,6 +5254,82 @@ keyframes
     -o-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@-webkit-keyframes smooth-entry-reverse-title {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@-moz-keyframes smooth-entry-reverse-title {
+  0% {
+    opacity: 0;
+    -moz-transform: translate(-50%, -55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes smooth-entry-reverse-title {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -55%);
+    -moz-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
+    -o-transform: translate(-50%, -55%);
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes smooth-entry-reverse-portrait {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 50%);
+  }
+}
+@-moz-keyframes smooth-entry-reverse-portrait {
+  0% {
+    opacity: 0;
+    -moz-transform: translate(-50%, 55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 50%);
+  }
+}
+@keyframes smooth-entry-reverse-portrait {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 55%);
+    -moz-transform: translate(-50%, 55%);
+    -ms-transform: translate(-50%, 55%);
+    -o-transform: translate(-50%, 55%);
+    transform: translate(-50%, 55%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    -o-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
   }
 }
 /* -------------------------------- 
@@ -5746,20 +5842,36 @@ header nav {
   height: 100px;
   line-height: 100px;
 }
-header nav ul li {
+header nav ul#bg-list li {
+  margin: 5px 10px;
+  overflow: visible!important;
+}
+header nav ul#bg-list li .bg-frame {
+  width: 50px;
+  height: 50px;
+  border: none;
+  overflow: hidden;
+  background-size: cover;
+}
+header nav ul#bg-list li .bg-frame img {
+  display: block;
+  height: 140px;
+  width: 240px;
+}
+header nav ul#link-list li {
   overflow: visible !important;
 }
-header nav ul li a {
+header nav ul#link-list li a {
   color: #fff;
   height: 65px;
   width: 65px;
   transition: 0.5s;
   padding: 15px;
 }
-header nav ul li a:hover {
+header nav ul#link-list li a:hover {
   background: none;
 }
-header nav ul li a img {
+header nav ul#link-list li a img {
   display: block;
 }
 header nav .brand-logo {
@@ -5788,15 +5900,18 @@ home #home .portrait-frame {
   transform: translate(-50%, 50%);
   border: none;
   overflow: hidden;
-}
-home #home .portrait-frame img {
+  margin: 0;
+  background: url('/img/porträt3.jpg');
+  background-size: cover;
   filter: contrast(150%);
 }
-home #home .home-bg {
+home #home #home-bg {
   background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
-  background: url('/img/backgrounds/flat2.png');
+  background: url('/img/backgrounds/bg-1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 timeline {
   padding: 150px 0px 0px 0px;
@@ -6545,11 +6660,6 @@ svg:not(:root) {
   to {
     transform: rotate(360deg);
   }
-}
-.smooth-entry-reverse {
-  -webkit-animation: smooth-entry-reverse 0.5s;
-  -moz-animation: smooth-entry-reverse 0.5s;
-  animation: smooth-entry-reverse 0.5s;
 }
 @media only screen and (max-width: 600px) {
   #home .section {

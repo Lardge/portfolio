@@ -1,0 +1,19 @@
+{
+    "bgItems": [
+        {
+            "id": "1"
+            , "title": "blue"
+            , "img": "img/backgrounds/bg-1.jpg"
+        }
+        , {
+            "id": "2"
+            , "title": "green"
+            , "img": "img/backgrounds/bg-2.jpg"
+        }
+        , {
+            "id": "3"
+            , "title": "yellow"
+            , "img": "img/backgrounds/bg-3.jpg"
+        }
+    ]
+}

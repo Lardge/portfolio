@@ -84,21 +84,39 @@ header {
         height: @nav-height;
         line-height: @nav-height;
         ul {
-            li {
-                //max-height: 65px;
-                //max-width: 65px;
-                overflow: visible !important;
-                a {
-                    color: #fff;
-                    height: 65px;
-                    width: 65px;
-                    transition: 0.5s;
-                    padding: 15px;
-                    &:hover {
-                        background: none;
+            &#bg-list {
+                li {
+                    margin: 5px 10px;
+                    overflow: visible!important;
+                    .bg-frame {
+                        width: 50px;
+                        height: 50px;
+                        border: none;
+                        overflow: hidden;
+                        background-size: cover;
+                        img {
+                            display: block;
+                            height: 140px;
+                            width: 240px;
+                        }
                     }
-                    img {
-                        display: block;
+                }
+            }
+            &#link-list {
+                li {
+                    overflow: visible !important;
+                    a {
+                        color: #fff;
+                        height: 65px;
+                        width: 65px;
+                        transition: 0.5s;
+                        padding: 15px;
+                        &:hover {
+                            background: none;
+                        }
+                        img {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -133,15 +151,18 @@ home {
             transform: translate(-50%, 50%);
             border: none;
             overflow: hidden;
-            img {
-                filter: contrast(150%);
-            }
+            margin: 0;
+            background: url('/img/porträt3.jpg');
+            background-size: cover;
+            filter: contrast(150%);
         }
-        .home-bg {
+        #home-bg {
             background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
-            background: url('/img/backgrounds/flat2.png');
+            background: url('/img/backgrounds/bg-1.jpg');
             background-size: cover;
             background-repeat: no-repeat;
+            -webkit-transition: background 0.2s ease-in-out;
+            transition: background 0.2s ease-in-out;
         }
     }
 }
@@ -1031,11 +1052,4 @@ svg:not(:root) {
     to {
         transform: rotate(360deg);
     }
-}
-
-// KEYFRAME ANIMATION CLASSE
-.smooth-entry-reverse {
-    -webkit-animation: smooth-entry-reverse 0.5s;
-    -moz-animation: smooth-entry-reverse 0.5s;
-    animation: smooth-entry-reverse 0.5s;
 }
