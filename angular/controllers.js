@@ -9,7 +9,7 @@ app.controller('Controller', function ($scope, $http) {
     //GET NAV-ITEMS FROM JSON FILE
     $http({
         method: 'GET'
-        , url: '/nav.json'
+        , url: '/json/nav.json'
     }).then(function successCallback(response) {
         $scope.navItems = response.data.navItems;
         console.log(response);
