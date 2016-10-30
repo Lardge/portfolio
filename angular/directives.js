@@ -2,12 +2,22 @@
 /* Directives */
 app.directive('header', function () {
     return {
-        templateUrl: '../html/header.html'
+        templateUrl: '../html/1-header.html'
     };
 });
 app.directive('home', function () {
     return {
-        templateUrl: '../html/home.html'
+        templateUrl: '../html/2-home.html'
+    };
+});
+app.directive('about', function () {
+    return {
+        templateUrl: '../html/3-about.html'
+    };
+});
+app.directive('timeline', function () {
+    return {
+        templateUrl: '../html/4-timeline.html'
     };
 });
 app.directive('section1', function () {
@@ -38,11 +48,6 @@ app.directive('section5', function () {
 app.directive('section6', function () {
     return {
         templateUrl: '../html/section-6.html'
-    };
-});
-app.directive('timeline', function () {
-    return {
-        templateUrl: '../html/timeline.html'
     };
 });
 app.directive('ngfooter', function () {
