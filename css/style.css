@@ -5781,22 +5781,33 @@ h1 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
   font-size: 5em;
   line-height: 100%;
+  margin: 1em 0px;
+}
+h2 {
+  font-family: "KGHappy", "BebasNeue", "Montserrat";
+  font-size: 2em;
+  line-height: 100%;
 }
 html,
 body,
 .section,
 .content {
-  font-weight: 300;
+  font-weight: normal;
   height: 100%;
-  line-height: 100%;
+  font-size: 16px;
+  line-height: 150%;
 }
 .section,
 .content {
-  width: 920px;
+  max-width: 920px;
   margin: 0 auto;
 }
+.container .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 div {
-  line-height: 100%;
+  line-height: 150%;
 }
 p {
   line-height: 1.6em;
@@ -5834,7 +5845,9 @@ img {
 }
 header,
 home,
-timeline {
+about,
+timeline,
+ngfooter {
   display: block;
 }
 header {
@@ -5896,6 +5909,7 @@ home #home .page-title {
   font-size: 7em;
   text-align: center;
   width: 720px;
+  line-height: 100%;
 }
 home #home .portrait-frame {
   width: 250px;
@@ -5920,12 +5934,45 @@ home #home #home-bg {
   transition: background 0.2s ease-in-out;
 }
 about #about {
-  margin: 100px 0px;
-  height: 500px;
+  padding: 200px 0px 100px;
+  min-height: 300px;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
+}
+about #about h2 {
+  margin: 0;
+  font-family: Roboto;
+  font-weight: bolder;
+}
+about #about .left {
+  text-align: left;
+}
+about #about .middle {
+  text-align: justify;
+}
+about #about .right {
+  text-align: right;
+}
+about #about .about-item {
+  margin-bottom: 15px;
+  min-width: 175px;
+}
+about #about .about-item img {
+  margin-right: 5px;
+  vertical-align: text-bottom;
+  width: 20px;
 }
 timeline {
-  padding: 150px 0px 0px 0px;
+  padding: 50px 0px;
   background: #f2f2f2;
+}
+timeline h1 {
+  text-align: center;
+}
+timeline .card .card-image {
+  height: 400px;
+}
+timeline .card .card-image img {
+  width: 125%;
 }
 /* button-collapse*/
 .button-collapse {
@@ -6680,9 +6727,11 @@ svg:not(:root) {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: -100px;
+  pointer-events: none;
 }
 .timeline .timeline-event .timeline-content {
   position: relative;
+  pointer-events: all;
   width: calc(50% - 50px);
 }
 .timeline .timeline-event::before {

@@ -1,3 +1,7 @@
+//SCROLL REVEAL
+window.sr = ScrollReveal();
+sr.reveal('.timeline');
+sr.reveal('.bar');
 //$(document).ready(function () {
 angular.element(document).ready(function () {
     //Fade in images
