@@ -20,11 +20,22 @@ app.directive('timeline', function () {
         templateUrl: '../html/4-timeline.html'
     };
 });
+app.directive('fun', function () {
+    return {
+        templateUrl: '../html/5-fun.html'
+    };
+});
+app.directive('contact', function () {
+    return {
+        templateUrl: '../html/6-contact.html'
+    };
+});
 app.directive('ngfooter', function () {
     return {
         templateUrl: '../html/footer.html'
     };
 });
+//NOT DOING ANYTHING
 app.directive('loadPlugins', function ($timeout) {
     return {
         restrict: 'A'

@@ -5781,7 +5781,8 @@ h1 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
   font-size: 5em;
   line-height: 100%;
-  margin: 1em 0px;
+  margin: 0.5em 0px 1em;
+  text-align: center;
 }
 h2 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
@@ -5856,7 +5857,7 @@ header {
   position: absolute;
 }
 header nav {
-  width: 920px;
+  max-width: 920px;
   margin: 0 auto;
   height: 100px;
   line-height: 100px;
@@ -5915,7 +5916,7 @@ home #home .portrait-frame {
   width: 250px;
   height: 250px;
   position: absolute;
-  bottom: 0%;
+  bottom: -3%;
   left: 50%;
   transform: translate(-50%, 50%);
   border: none;
@@ -5964,15 +5965,27 @@ about #about .about-item img {
 timeline {
   padding: 50px 0px;
   background: #f2f2f2;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
 }
-timeline h1 {
+timeline #timeline {
+  padding: 0px 50px;
+}
+timeline #timeline h1 {
   text-align: center;
 }
-timeline .card .card-image {
-  height: 400px;
+timeline #timeline .card .card-image {
+  height: 350px;
 }
-timeline .card .card-image img {
+timeline #timeline .card .card-image img {
   width: 125%;
+  width: 750px;
+}
+timeline #timeline .card .date {
+  margin-top: 20px;
+  color: #999;
+  font-size: 13px;
+  text-align: right;
+  font-style: italic;
 }
 /* button-collapse*/
 .button-collapse {
@@ -5988,8 +6001,18 @@ timeline .card .card-image img {
 .file {
   background-color: rgba(51, 51, 51, 0.08);
 }
-#footer {
+footer #footer {
   min-height: 200px;
+}
+footer .footer-copyright {
+  line-height: 50px;
+}
+footer .footer-copyright .text-copyright {
+  font-size: 14px;
+  margin-left: 30px;
+  line-height: 50px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .material-icons {
   pointer-events: none;
@@ -6782,7 +6805,10 @@ svg:not(:root) {
   font-size: 25px;
   line-height: 40px;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .timeline .timeline-event {
+    margin-bottom: 0px;
+  }
   .timeline .timeline-event .timeline-content {
     width: calc(100% - 70px);
   }
