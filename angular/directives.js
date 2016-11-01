@@ -32,7 +32,7 @@ app.directive('contact', function () {
 });
 app.directive('ngfooter', function () {
     return {
-        templateUrl: '../html/footer.html'
+        templateUrl: '../html/7-footer.html'
     };
 });
 //NOT DOING ANYTHING
