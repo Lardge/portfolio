@@ -4,19 +4,19 @@
  */
 (function ($) {
     'use strict';
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 400;
-    var navbarHeight = $('.navbar-fixed').outerHeight();
-    $(window).scroll(function () {
-        didScroll = true;
-    });
-    setInterval(function () {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 250);
+    /*    var didScroll;
+        var lastScrollTop = 0;
+        var delta = 400;
+        var navbarHeight = $('.navbar-fixed').outerHeight();
+        $(window).scroll(function () {
+            didScroll = true;
+        });*/
+    /*    setInterval(function () {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);*/
     /*    function hasScrolled() {
             var st = $('body').scrollTop();
             // Make sure they scroll more than delta
@@ -36,12 +36,14 @@
             lastScrollTop = st;
         }*/
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
+        if ($(this).scrollTop() > 500) {
             $('.navbar-fixed').removeClass('bounce-out').addClass('bounce-in');
+            //$('.portrait-frame').addClass('small');
         }
         else {
             if ($('.navbar-fixed').hasClass('bounce-in')) {
                 $('.navbar-fixed').removeClass('bounce-in').addClass('bounce-out');
+                //$('.portrait-frame').removeClass('small');
             }
         }
     });

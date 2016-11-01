@@ -35,6 +35,22 @@ app.directive('ngfooter', function () {
         templateUrl: '../html/7-footer.html'
     };
 });
+app.directive('myRepeatDirective', function () {
+    return function (scope, element, attrs) {
+        if (scope.$last) {
+            jQuery('.tooltipped').tooltip({
+                delay: 50
+            });
+        }
+    }
+});
+app.directive('myMainDirective', function () {
+    return function (scope, element, attrs) {
+        if (scope.$last) {
+            //HEJ
+        }
+    }
+});
 //NOT DOING ANYTHING
 app.directive('loadPlugins', function ($timeout) {
     return {
