@@ -5890,6 +5890,14 @@ header .navbar-fixed nav .container {
   position: relative;
   height: 100%;
 }
+header .navbar-fixed nav .container .page-title {
+  font-family: "KGHappy";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  font-size: 2.5em;
+}
 header .navbar-fixed nav .container ul {
   position: absolute;
   top: 50%;
@@ -6041,9 +6049,11 @@ about #about .about-item {
   min-width: 175px;
 }
 about #about .about-item img {
-  margin-right: 5px;
-  vertical-align: text-bottom;
-  width: 20px;
+  left: 10px;
+  top: 50%;
+  width: 22px;
+  position: absolute;
+  transform: translateY(-50%);
 }
 timeline {
   overflow: hidden;
