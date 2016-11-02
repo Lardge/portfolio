@@ -2319,10 +2319,10 @@
   position: absolute;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-  top: -16px;
-  right: -16px;
-  bottom: -16px;
-  left: -16px;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
   opacity: 0;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -2332,10 +2332,10 @@
 .hvr-outline-in:hover:before,
 .hvr-outline-in:focus:before,
 .hvr-outline-in:active:before {
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   opacity: 1;
 }
 /* Round Corners */
@@ -5777,9 +5777,21 @@ Modules - reusable parts of our design
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'DeValencia';
+  src: url('/font/DeValencia/DeValencia.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bungee';
+  src: url('/font/Bungee/Bungee-Regular.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 h1 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
-  font-size: 5em;
+  font-size: 6em;
   line-height: 100%;
   margin: 0.5em 0px 1em;
   text-align: center;
@@ -5861,13 +5873,15 @@ header {
 header .navbar-fixed {
   transform: translateY(-150px);
   position: fixed;
-  height: 100px;
+  height: 80px;
   width: 100%;
   top: -10px;
 }
 header .navbar-fixed nav {
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
   max-width: 100%;
-  height: 110px;
+  height: 90px;
   padding-top: 10px;
   background: url('/img/backgrounds/bg-1-blur.jpg');
 }
@@ -5882,42 +5896,77 @@ header .navbar-fixed nav .container ul {
   transform: translateY(-50%);
   right: 0;
 }
-header nav {
-  max-width: 920px;
-  margin: 0 auto;
-  height: 100px;
-  line-height: 100px;
+header .navbar-fixed nav .container ul.bg-list {
+  left: 0;
 }
-header nav ul#bg-list li {
+header .navbar-fixed nav .container ul.bg-list li {
   margin: 5px 10px;
   overflow: visible!important;
 }
-header nav ul#bg-list li .bg-frame {
+header .navbar-fixed nav .container ul.bg-list li .bg-frame {
   width: 50px;
   height: 50px;
   border: none;
   overflow: hidden;
-  background-size: cover;
 }
-header nav ul#bg-list li .bg-frame img {
+header .navbar-fixed nav .container ul.bg-list li .bg-frame img {
   display: block;
   height: 140px;
   width: 240px;
 }
-header nav ul#link-list li {
-  overflow: visible !important;
+header .navbar-fixed nav .container ul.link-list {
+  padding-top: 0px;
 }
-header nav ul#link-list li a {
+header nav {
+  max-width: 920px;
+  margin: 0 auto;
+  height: 65px;
+  line-height: 65px;
+}
+header nav ul.bg-list {
+  position: fixed;
+  z-index: 9999;
+  bottom: -10px;
+  left: 15px;
+  bottom: 15px;
+  width: 65px;
+}
+header nav ul.bg-list li {
+  line-height: 50px;
+  margin: 5px;
+  overflow: visible!important;
+}
+header nav ul.bg-list li .bg-frame {
+  width: 50px;
+  height: 50px;
+  border: none;
+  overflow: hidden;
+}
+header nav ul.bg-list li .bg-frame img {
+  display: block;
+  height: 140px;
+  width: 240px;
+}
+header nav ul.link-list {
+  padding-top: 15px;
+  line-height: 65px;
+}
+header nav ul.link-list li {
+  border-radius: 50%;
+  line-height: 65px;
+  overflow: hidden !important;
+}
+header nav ul.link-list li a {
   color: #fff;
   height: 65px;
   width: 65px;
   transition: 0.5s;
   padding: 15px;
 }
-header nav ul#link-list li a:hover {
+header nav ul.link-list li a:hover {
   background: none;
 }
-header nav ul#link-list li a img {
+header nav ul.link-list li a img {
   display: block;
 }
 header nav .brand-logo {
@@ -5934,6 +5983,7 @@ home #home {
 home #home .page-title {
   font-family: "KGHappy";
   font-size: 7em;
+  text-transform: uppercase;
   text-align: center;
   width: 720px;
   line-height: 100%;
@@ -5996,6 +6046,7 @@ about #about .about-item img {
   width: 20px;
 }
 timeline {
+  overflow: hidden;
   padding: 50px 0px;
   background: #f2f2f2;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
@@ -6043,6 +6094,9 @@ contact {
 }
 footer #footer {
   min-height: 200px;
+}
+footer #footer .row {
+  margin-bottom: 5px;
 }
 footer .footer-copyright {
   line-height: 50px;
@@ -6147,6 +6201,10 @@ footer .footer-copyright .text-copyright {
 }
 footer.page-footer {
   margin: 0;
+  background: url('/img/backgrounds/bg-1-blur.jpg');
+  background-size: cover;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 #bottomShape {
   margin-bottom: -50px;
@@ -6792,11 +6850,6 @@ svg:not(:root) {
   margin-bottom: -100px;
   pointer-events: none;
 }
-.timeline .timeline-event .timeline-content {
-  position: relative;
-  pointer-events: all;
-  width: calc(50% - 50px);
-}
 .timeline .timeline-event::before {
   display: block;
   content: "";
@@ -6816,6 +6869,23 @@ svg:not(:root) {
   background: #d2d2d2;
   left: calc(50% - 1px);
   top: calc(50% + 30px);
+}
+.timeline .timeline-event .timeline-content {
+  position: relative;
+  pointer-events: all;
+  width: calc(50% - 50px);
+}
+.timeline .timeline-event .coffe-svg {
+  position: absolute;
+  top: 66px;
+  left: 66%;
+  width: 75%;
+}
+.timeline .timeline-event .idea-svg {
+  position: absolute;
+  top: 150px;
+  right: 66%;
+  width: 75%;
 }
 .timeline .timeline-event:first-child::before {
   display: none;
@@ -6902,7 +6972,7 @@ svg:not(:root) {
     transform: translateY(-25px);
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-28px);
   }
   50% {
     transform: translateY(-25px);
@@ -6914,7 +6984,7 @@ svg:not(:root) {
     transform: translateY(-5px);
   }
   80% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   90% {
     transform: translateY(-5px);

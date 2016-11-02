@@ -22,8 +22,11 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         $scope.getNavigation();
         $scope.getBackgrounds();
     });
-    $scope.changeBackground = function (imgUrl) {
-        angular.element(document.querySelector('#home-bg')).css('background', 'url(' + imgUrl + ')')
+    $scope.changeBackground = function (bgItem) {
+        angular.element(document.querySelector('#home-bg')).css('background-image', 'url(' + bgItem.imgUrl + ')');
+        angular.element(document.querySelector('header .navbar-fixed nav')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
+        angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
+        angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
     };
     //ALL THE JQUERY PLUGINS
     $timeout(function () {
@@ -33,12 +36,13 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         , });
         sr.reveal('.timeline-event');
         sr.reveal('#about');
+        jQuery('.parallax').parallax();
         smoothScroll.init({
             selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
             selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
             speed: 1000, // Integer. How fast to complete the scroll in milliseconds
             easing: 'easeInOutCubic', // Easing pattern to use
-            offset: 160, // Integer. How far to offset the scrolling anchor location in pixels
+            offset: 177, // Integer. How far to offset the scrolling anchor location in pixels
             callback: function (anchor, toggle) {} // Function to run after scrolling
         });
         //FROSET GLASS

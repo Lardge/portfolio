@@ -1,10 +1,10 @@
 // MIXINS
-@nav-height: 100px;
+@nav-height: 65px;
 @content-width: 920px;
 // GLOBAL //
 h1 {
     font-family: "KGHappy", "BebasNeue", "Montserrat";
-    font-size: 5em;
+    font-size: 6em;
     line-height: 100%;
     margin: 0.5em 0px 1em;
     text-align: center;
@@ -99,12 +99,14 @@ header {
     .navbar-fixed {
         transform: translateY(-150px);
         position: fixed;
-        height: 100px;
+        height: 80px;
         width: 100%;
         top: -10px;
         nav {
+            -webkit-transition: background 0.2s ease-in-out;
+            transition: background 0.2s ease-in-out;
             max-width: 100%;
-            height: 110px;
+            height: 90px;
             padding-top: 10px;
             //background: rgba(255, 255, 255, s0.2);
             background: url('/img/backgrounds/bg-1-blur.jpg');
@@ -117,6 +119,28 @@ header {
                     top: 50%;
                     transform: translateY(-50%);
                     right: 0;
+                    &.bg-list {
+                        left: 0;
+                        li {
+                            margin: 5px 10px;
+                            overflow: visible!important;
+                            .bg-frame {
+                                width: 50px;
+                                height: 50px;
+                                border: none;
+                                overflow: hidden;
+                                //background-size: cover;
+                                img {
+                                    display: block;
+                                    height: 140px;
+                                    width: 240px;
+                                }
+                            }
+                        }
+                    }
+                    &.link-list {
+                        padding-top: 0px;
+                    }
                 }
             }
         }
@@ -127,16 +151,23 @@ header {
         height: @nav-height;
         line-height: @nav-height;
         ul {
-            &#bg-list {
+            &.bg-list {
+                position: fixed;
+                z-index: 9999;
+                bottom: -10px;
+                left: 15px;
+                bottom: 15px;
+                width: 65px;
                 li {
-                    margin: 5px 10px;
+                    line-height: 50px;
+                    margin: 5px;
                     overflow: visible!important;
                     .bg-frame {
                         width: 50px;
                         height: 50px;
                         border: none;
                         overflow: hidden;
-                        background-size: cover;
+                        //background-size: cover;
                         img {
                             display: block;
                             height: 140px;
@@ -145,9 +176,13 @@ header {
                     }
                 }
             }
-            &#link-list {
+            &.link-list {
+                padding-top: 15px;
+                line-height: 65px;
                 li {
-                    overflow: visible !important;
+                    border-radius: 50%;
+                    line-height: 65px;
+                    overflow: hidden !important;
                     a {
                         color: #fff;
                         height: 65px;
@@ -182,6 +217,7 @@ home {
         .page-title {
             font-family: "KGHappy";
             font-size: 7em;
+            text-transform: uppercase;
             text-align: center;
             width: 720px;
             line-height: 100%;
@@ -253,6 +289,7 @@ about {
 
 // TIMELINE //
 timeline {
+    overflow: hidden;
     padding: 50px 0px;
     background: #f2f2f2;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
@@ -312,6 +349,9 @@ contact {
 footer {
     #footer {
         min-height: 200px;
+        .row {
+            margin-bottom: 5px;
+        }
     }
     .footer-copyright {
         line-height: 50px;
@@ -455,6 +495,10 @@ footer {
 
 footer.page-footer {
     margin: 0;
+    background: url('/img/backgrounds/bg-1-blur.jpg');
+    background-size: cover;
+    -webkit-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
 }
 
 #bottomShape {
@@ -1186,42 +1230,50 @@ svg:not(:root) {
 .timeline {
     position: relative;
     margin-bottom: 100px;
-}
-
-.timeline .timeline-event {
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: -100px;
-    pointer-events: none;
-}
-
-.timeline .timeline-event .timeline-content {
-    position: relative;
-    pointer-events: all;
-    width: calc(~"50% - 50px");
-}
-
-.timeline .timeline-event::before {
-    display: block;
-    content: "";
-    width: 2px;
-    height: calc(~"50% - 30px");
-    position: absolute;
-    background: #d2d2d2;
-    left: calc(~"50% - 1px");
-    top: 0;
-}
-
-.timeline .timeline-event::after {
-    display: block;
-    content: "";
-    width: 2px;
-    height: calc(~"50% - 30px");
-    position: absolute;
-    background: #d2d2d2;
-    left: calc(~"50% - 1px");
-    top: calc(~"50% + 30px");
+    .timeline-event {
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: -100px;
+        pointer-events: none;
+        &::before {
+            display: block;
+            content: "";
+            width: 2px;
+            height: calc(~"50% - 30px");
+            position: absolute;
+            background: #d2d2d2;
+            left: calc(~"50% - 1px");
+            top: 0;
+        }
+        &::after {
+            display: block;
+            content: "";
+            width: 2px;
+            height: calc(~"50% - 30px");
+            position: absolute;
+            background: #d2d2d2;
+            left: calc(~"50% - 1px");
+            top: calc(~"50% + 30px");
+        }
+        .timeline-content {
+            position: relative;
+            pointer-events: all;
+            width: calc(~"50% - 50px");
+        }
+        .coffe-svg {
+            position: absolute;
+            top: 66px;
+            left: 66%;
+            width: 75%;
+        }
+        .idea-svg {
+            position: absolute;
+            top: 150px;
+            right: 66%;
+            width: 75%;
+        }
+    }
 }
 
 .timeline .timeline-event:first-child::before {
@@ -1321,7 +1373,7 @@ svg:not(:root) {
         transform: translateY(-25px);
     }
     40% {
-        transform: translateY(-30px);
+        transform: translateY(-28px);
     }
     50% {
         transform: translateY(-25px);
@@ -1333,7 +1385,7 @@ svg:not(:root) {
         transform: translateY(-5px);
     }
     80% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
     }
     90% {
         transform: translateY(-5px);
@@ -1384,3 +1436,5 @@ canvas {
     left: 0;
     width: 100%;
 }
+
+.material-tooltip .backdrop {}

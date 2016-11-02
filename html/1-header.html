@@ -2,15 +2,15 @@
 <div class="navbar">
     <nav id="nav" class="no-bg-shadow" role="navigation">
         <!--BACKGROUNDS-->
-        <ul id="bg-list" class="left hide-on-med-and-down">
+        <ul class="bg-list left hide-on-med-and-down">
             <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse">
-                <div class="btn-floating btn-large circle bg-frame waves-effect waves-light" ng-style="{'background-image': 'url(' + bgItem.img + ')'}" ng-click="changeBackground(bgItem.img)"> </div>
+                <div class="btn-floating btn-large circle bg-frame waves-effect waves-light" ng-style="{'background-image': 'url(' + bgItem.imgUrl + ')'}" ng-click="changeBackground(bgItem)"> </div>
             </li>
         </ul>
         <!--NAV-ITEMS-->
-        <ul id="link-list" class="right hide-on-med-and-down">
+        <ul class="link-list right hide-on-med-and-down">
             <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse" my-repeat-directive>
-                <a data-scroll data-scroll-offset="10" href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip"> <img src="{{navItem.img}}" /></a>
+                <a data-scroll data-scroll-offset="10" href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
             </li>
         </ul>
         <!--MOBILE-NAV-ITEMS-->
@@ -20,11 +20,17 @@
 </div>
 <!-- FIXED NAVBAR -->
 <div class="navbar-fixed animated">
-    <nav>
+    <nav class="">
         <div class="container">
-            <ul id="link-list" class="right hide-on-med-and-down">
-                <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse" my-repeat-directive>
-                    <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip"> <img src="{{navItem.img}}" /></a>
+            <!--  <ul class="bg-list left hide-on-med-and-down">
+                <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse">
+                    <div class="btn-floating btn-large circle bg-frame waves-effect waves-light" ng-style="{'background-image': 'url(' + bgItem.imgUrl + ')'}" ng-click="changeBackground(bgItem)"> </div>
+                </li>
+            </ul>-->
+            <!-- NAVITEMS-->
+            <ul class="link-list right hide-on-med-and-down ">
+                <li ng-repeat="navItem in navItems " class="waves-effect waves-light smooth-entry-reverse " my-repeat-directive>
+                    <a data-scroll href="#{{navItem.title}} " class="hvr-outline-in tooltipped " data-position="bottom " data-delay="50 " data-tooltip="I am tooltip "> <img src="{{navItem.img}} " /></a>
                 </li>
             </ul>
         </div>

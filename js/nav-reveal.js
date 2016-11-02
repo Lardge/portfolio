@@ -36,7 +36,7 @@
             lastScrollTop = st;
         }*/
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
+        if ($(this).scrollTop() > 100) {
             $('.navbar-fixed').removeClass('bounce-out').addClass('bounce-in');
             //$('.portrait-frame').addClass('small');
         }
