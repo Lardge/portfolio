@@ -1,5 +1,6 @@
 /* Controllers */
 app.controller('myController', ['$scope', '$timeout', 'myService', function ($scope, $timeout, myService) {
+    $scope.loadingContent = true;
     //GET NAV-ITEMS FROM JSON FILE
     $scope.getNavigation = function () {
         myService.getNavigation().then(function (response) {
@@ -14,6 +15,7 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         myService.getBackgrounds().then(function (response) {
             console.log(response);
             $scope.bgItems = response.bgItems;
+            $scope.setBackground($scope.bgItems);
         }).catch(function () {
             console.log("Error occured in Get Backgrounds");
         });
@@ -28,6 +30,15 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
     };
+    $scope.setBackground = function (bgItems) {
+        var randomBgId = Math.floor((Math.random() * 3) + 1);
+        for (var i = 0; i < bgItems.length; i++) {
+            if (bgItems[i].id == randomBgId) {
+                $scope.changeBackground(bgItems[i]);
+                return;
+            }
+        }
+    };
     //ALL THE JQUERY PLUGINS
     $timeout(function () {
         window.sr = ScrollReveal({
@@ -37,14 +48,14 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         sr.reveal('.timeline-event');
         sr.reveal('#about');
         jQuery('.parallax').parallax();
-        smoothScroll.init({
+        /*smoothScroll.init({
             selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
             selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
             speed: 1000, // Integer. How fast to complete the scroll in milliseconds
             easing: 'easeInOutCubic', // Easing pattern to use
             offset: 177, // Integer. How far to offset the scrolling anchor location in pixels
             callback: function (anchor, toggle) {} // Function to run after scrolling
-        });
+        });*/
         //FROSET GLASS
         /*        jQuery(function () {
                     var transformCanvas = function () {

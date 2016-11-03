@@ -9,8 +9,8 @@
         </ul>
         <!--NAV-ITEMS-->
         <ul class="link-list right hide-on-med-and-down">
-            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse" my-repeat-directive>
-                <a data-scroll data-scroll-offset="10" href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
+            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse animation-delay-{{navItem.delay}}" nav-items-repeat-directive>
+                <a href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
             </li>
         </ul>
         <!--MOBILE-NAV-ITEMS-->
@@ -30,8 +30,8 @@
             <!-- NAVITEMS-->
             <div class="page-title">LARS BECK-FRIIS</div>
             <ul class="link-list right hide-on-med-and-down ">
-                <li ng-repeat="navItem in navItems " class="waves-effect waves-light smooth-entry-reverse " my-repeat-directive>
-                    <a data-scroll href="#{{navItem.title}} " class="hvr-outline-in tooltipped " data-position="bottom " data-delay="50 " data-tooltip="I am tooltip "> <img src="{{navItem.img}} " /></a>
+                <li ng-repeat="navItem in navItems " class="waves-effect waves-light smooth-entry-reverse">
+                    <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in tooltipped " data-position="bottom " data-delay="50 " data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
                 </li>
             </ul>
         </div>

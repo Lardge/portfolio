@@ -4802,21 +4802,29 @@ keyframes
 
 -------------------------------- */
 .smooth-entry-reverse {
+  animation-fill-mode: forwards !important;
+  opacity: 0;
   -webkit-animation: smooth-entry-reverse 0.5s;
   -moz-animation: smooth-entry-reverse 0.5s;
   animation: smooth-entry-reverse 0.5s;
 }
 .smooth-entry-title {
+  animation-fill-mode: forwards !important;
+  opacity: 0;
   -webkit-animation: smooth-entry-title 0.5s;
   -moz-animation: smooth-entry-title 0.5s;
   animation: smooth-entry-title 0.5s;
 }
 .smooth-entry-reverse-title {
+  animation-fill-mode: forwards !important;
+  opacity: 0;
   -webkit-animation: smooth-entry-reverse-title 0.5s;
   -moz-animation: smooth-entry-reverse-title 0.5s;
   animation: smooth-entry-reverse-title 0.5s;
 }
 .smooth-entry-reverse-portrait {
+  animation-fill-mode: forwards !important;
+  opacity: 0;
   -webkit-animation: smooth-entry-reverse-portrait 0.5s;
   -moz-animation: smooth-entry-reverse-portrait 0.5s;
   animation: smooth-entry-reverse-portrait 0.5s;
@@ -5731,6 +5739,144 @@ Modules - reusable parts of our design
     transform: translateX(0);
   }
 }
+.loader,
+.loader-figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.loader {
+  overflow: visible;
+  padding-top: 2em;
+  height: 0;
+  width: 2em;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  background: white;
+  z-index: 99999;
+}
+.loader-figure {
+  height: 0;
+  width: 0;
+  box-sizing: border-box;
+  border: 0 solid #FE665C;
+  border-radius: 50%;
+  -webkit-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.loader-label {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  color: #8d3b3e;
+  white-space: nowrap;
+  -webkit-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@-webkit-keyframes loader-figure {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    height: 2em;
+    width: 2em;
+    border-width: 1em;
+    opacity: 1;
+  }
+  100% {
+    height: 2em;
+    width: 2em;
+    border-width: 0;
+    opacity: 0;
+  }
+}
+@-moz-keyframes loader-figure {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    height: 2em;
+    width: 2em;
+    border-width: 1em;
+    opacity: 1;
+  }
+  100% {
+    height: 2em;
+    width: 2em;
+    border-width: 0;
+    opacity: 0;
+  }
+}
+@keyframes loader-figure {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    height: 2em;
+    width: 2em;
+    border-width: 1em;
+    opacity: 1;
+  }
+  100% {
+    height: 2em;
+    width: 2em;
+    border-width: 0;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes loader-label {
+  0% {
+    opacity: 0.35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+@-moz-keyframes loader-label {
+  0% {
+    opacity: 0.35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+@keyframes loader-label {
+  0% {
+    opacity: 0.35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
 @font-face {
   font-family: 'BebasNeue';
   src: url('/font/BebasNeue/bebasneue-webfont.woff2') format('woff2'), url('/font/BebasNeue/bebasneue-webfont.woff') format('woff');
@@ -5793,13 +5939,22 @@ h1 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
   font-size: 6em;
   line-height: 100%;
-  margin: 0.5em 0px 1em;
+  margin: 0.5em 0px 0.1em;
   text-align: center;
 }
 h2 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
   font-size: 2em;
   line-height: 100%;
+}
+h3 {
+  font-size: 1.3em;
+  line-height: 110%;
+  color: #555;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0.1em 0 3em 0;
 }
 html,
 body,
@@ -5814,6 +5969,11 @@ body,
 .content {
   max-width: 920px;
   margin: 0 auto;
+}
+section {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
 }
 .container .row {
   margin-left: 0px;
@@ -5864,11 +6024,13 @@ fun,
 contact,
 ngfooter {
   display: block;
+  position: relative;
 }
 header {
   width: 100%;
   min-height: 70px;
   position: absolute;
+  z-index: 2;
 }
 header .navbar-fixed {
   transform: translateY(-150px);
@@ -5883,7 +6045,7 @@ header .navbar-fixed nav {
   max-width: 100%;
   height: 90px;
   padding-top: 10px;
-  background: url('/img/backgrounds/bg-1-blur.jpg');
+  background-size: cover;
 }
 header .navbar-fixed nav .container {
   max-width: 920px;
@@ -6020,6 +6182,7 @@ home #home .portrait-frame.small {
 home #home #home-bg {
   background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
   background: url('/img/backgrounds/bg-1.jpg');
+  background: white;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: background 0.2s ease-in-out;
@@ -6055,14 +6218,11 @@ about #about .about-item img {
   position: absolute;
   transform: translateY(-50%);
 }
-timeline {
+timeline #timeline {
   overflow: hidden;
-  padding: 50px 0px;
+  padding: 100px 50px 150px;
   background: #f2f2f2;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
-}
-timeline #timeline {
-  padding: 0px 50px;
 }
 timeline #timeline h1 {
   text-align: center;
@@ -6073,6 +6233,7 @@ timeline #timeline .card .card-image {
 timeline #timeline .card .card-image img {
   width: 125%;
   width: 750px;
+  border-radius: 3px;
 }
 timeline #timeline .card .date {
   margin-top: 20px;
@@ -6080,6 +6241,108 @@ timeline #timeline .card .date {
   font-size: 13px;
   text-align: right;
   font-style: italic;
+}
+timeline .timeline {
+  position: relative;
+}
+timeline .timeline .timeline-event {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: -100px;
+  pointer-events: none;
+}
+timeline .timeline .timeline-event::before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: calc(50% - 30px);
+  position: absolute;
+  background: #d2d2d2;
+  left: calc(50% - 1px);
+  top: 0;
+}
+timeline .timeline .timeline-event::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: calc(50% - 30px);
+  position: absolute;
+  background: #d2d2d2;
+  left: calc(50% - 1px);
+  top: calc(50% + 30px);
+}
+timeline .timeline .timeline-event .timeline-content {
+  position: relative;
+  pointer-events: all;
+  width: calc(50% - 50px);
+}
+timeline .timeline .timeline-event .coffe-svg {
+  position: absolute;
+  top: 66px;
+  left: 66%;
+  width: 75%;
+  -webkit-filter: brightness(4.5);
+  filter: brightness(4.5);
+}
+timeline .timeline .timeline-event .idea-svg {
+  position: absolute;
+  top: 150px;
+  right: 66%;
+  width: 75%;
+  -webkit-filter: brightness(4.5);
+  filter: brightness(4.5);
+}
+timeline .timeline .timeline-event:first-child::before {
+  display: none;
+}
+timeline .timeline .timeline-event:last-child::after {
+  display: none;
+}
+timeline .timeline .timeline-event:nth-child(even) .timeline-content {
+  margin-left: calc(50% + 50px);
+}
+timeline .timeline .timeline-event:nth-child(odd) .timeline-content {
+  margin-left: 0;
+}
+timeline .timeline .timeline-badge {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #d2d2d2;
+  top: calc(50% - 20px);
+  right: calc(50% - 20px);
+  border-radius: 50%;
+  text-align: center;
+  cursor: default;
+}
+timeline .timeline .timeline-badge i {
+  font-size: 25px;
+  line-height: 40px;
+}
+@media (max-width: 900px) {
+  timeline .timeline .timeline-event {
+    margin-bottom: 0px;
+  }
+  timeline .timeline .timeline-event .timeline-content {
+    width: calc(100% - 70px);
+  }
+  timeline .timeline .timeline-event::before {
+    left: 19px;
+  }
+  timeline .timeline .timeline-event::after {
+    left: 19px;
+  }
+  timeline .timeline .timeline-event:nth-child(even) .timeline-content {
+    margin-left: 70px;
+  }
+  timeline .timeline .timeline-event:nth-child(odd) .timeline-content {
+    margin-left: 70px;
+  }
+  timeline .timeline .timeline-badge {
+    left: 0;
+  }
 }
 fun {
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
@@ -6212,6 +6475,7 @@ footer .footer-copyright .text-copyright {
 footer.page-footer {
   margin: 0;
   background: url('/img/backgrounds/bg-1-blur.jpg');
+  background: white;
   background-size: cover;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
@@ -6849,105 +7113,6 @@ svg:not(:root) {
     transform: rotate(360deg);
   }
 }
-.timeline {
-  position: relative;
-  margin-bottom: 100px;
-}
-.timeline .timeline-event {
-  position: relative;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: -100px;
-  pointer-events: none;
-}
-.timeline .timeline-event::before {
-  display: block;
-  content: "";
-  width: 2px;
-  height: calc(50% - 30px);
-  position: absolute;
-  background: #d2d2d2;
-  left: calc(50% - 1px);
-  top: 0;
-}
-.timeline .timeline-event::after {
-  display: block;
-  content: "";
-  width: 2px;
-  height: calc(50% - 30px);
-  position: absolute;
-  background: #d2d2d2;
-  left: calc(50% - 1px);
-  top: calc(50% + 30px);
-}
-.timeline .timeline-event .timeline-content {
-  position: relative;
-  pointer-events: all;
-  width: calc(50% - 50px);
-}
-.timeline .timeline-event .coffe-svg {
-  position: absolute;
-  top: 66px;
-  left: 66%;
-  width: 75%;
-}
-.timeline .timeline-event .idea-svg {
-  position: absolute;
-  top: 150px;
-  right: 66%;
-  width: 75%;
-}
-.timeline .timeline-event:first-child::before {
-  display: none;
-}
-.timeline .timeline-event:last-child::after {
-  display: none;
-}
-.timeline .timeline-event:nth-child(even) .timeline-content {
-  margin-left: calc(50% + 50px);
-}
-.timeline .timeline-event:nth-child(odd) .timeline-content {
-  margin-left: 0;
-}
-.timeline .timeline-badge {
-  display: block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #d2d2d2;
-  top: calc(50% - 20px);
-  right: calc(50% - 20px);
-  border-radius: 50%;
-  text-align: center;
-  cursor: default;
-}
-.timeline .timeline-badge i {
-  font-size: 25px;
-  line-height: 40px;
-}
-@media (max-width: 900px) {
-  .timeline .timeline-event {
-    margin-bottom: 0px;
-  }
-  .timeline .timeline-event .timeline-content {
-    width: calc(100% - 70px);
-  }
-  .timeline .timeline-event::before {
-    left: 19px;
-  }
-  .timeline .timeline-event::after {
-    left: 19px;
-  }
-  .timeline .timeline-event:nth-child(even) .timeline-content {
-    margin-left: 70px;
-  }
-  .timeline .timeline-event:nth-child(odd) .timeline-content {
-    margin-left: 70px;
-  }
-  .timeline .timeline-badge {
-    left: 0;
-  }
-}
 .nav-down1 {
   position: absolute;
   background: #2098d1;
@@ -7037,6 +7202,27 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
+}
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-750 {
+  animation-delay: 750ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
 }
 @media only screen and (max-width: 600px) {
   #home .section {
