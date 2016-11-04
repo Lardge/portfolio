@@ -5,18 +5,21 @@
             , "title": "blue"
             , "imgUrl": "img/backgrounds/bg-1.jpg"
             , "imgBlurUrl": "img/backgrounds/bg-1-blur.jpg"
+            , "delay": "500"
         }
         , {
             "id": "2"
             , "title": "green"
             , "imgUrl": "img/backgrounds/bg-2.jpg"
             , "imgBlurUrl": "img/backgrounds/bg-2-blur.jpg"
+            , "delay": "300"
         }
         , {
             "id": "3"
             , "title": "yellow"
             , "imgUrl": "img/backgrounds/bg-3.jpg"
             , "imgBlurUrl": "img/backgrounds/bg-3-blur.jpg"
+            , "delay": "100"
         }
     ]
 }

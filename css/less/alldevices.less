@@ -17,13 +17,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1em;
     line-height: 110%;
     color: #555;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0.1em 0 3em 0;
+    margin: 0.1em 0 5em 0;
 }
 
 html,
@@ -113,7 +113,7 @@ header {
     width: 100%;
     min-height: 70px;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     .navbar-fixed {
         transform: translateY(-150px);
         position: fixed;
@@ -153,8 +153,8 @@ header {
                             margin: 5px 10px;
                             overflow: visible!important;
                             .bg-frame {
-                                width: 50px;
-                                height: 50px;
+                                width: 40px;
+                                height: 40px;
                                 border: none;
                                 overflow: hidden;
                                 //background-size: cover;
@@ -188,11 +188,11 @@ header {
                 width: 65px;
                 li {
                     line-height: 50px;
-                    margin: 5px;
+                    margin: 0px;
                     overflow: visible!important;
                     .bg-frame {
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                         border: none;
                         overflow: hidden;
                         //background-size: cover;
@@ -289,6 +289,7 @@ about {
         padding: 200px 0px 100px;
         min-height: 300px;
         box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
+        z-index: 2;
         h2 {
             margin: 0;
             font-family: Roboto;
@@ -321,7 +322,7 @@ about {
 timeline {
     #timeline {
         overflow: hidden;
-        padding: 100px 50px 150px;
+        padding: 50px 50px 150px;
         background: #f2f2f2;
         box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
         h1 {
@@ -1491,4 +1492,30 @@ canvas {
 
 .animation-delay-1000 {
     animation-delay: 1000ms;
+}
+
+.animation-delay-1250 {
+    animation-delay: 1250ms;
+}
+
+.animation-delay-1500 {
+    animation-delay: 1500ms;
+}
+
+//LOADER STUFF
+
+.hideLoader{
+    pointer-events: none;
+    animation: hideLoader;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards
+}
+
+@keyframes hideLoader{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }

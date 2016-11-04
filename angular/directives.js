@@ -49,8 +49,9 @@ app.directive('navItemsRepeatDirective', function ($timeout) {
                     delay: 50
                 });
                 jQuery('.scrollspy').scrollSpy({
-                    scrollOffset: 150
+                    scrollOffset: 81
                 });
+                //jQuery('ul.tabs').tabs();
             })
         }
     }
@@ -60,6 +61,10 @@ app.directive('myMainDirective', function ($timeout) {
         if (scope.$last) {
             $timeout(function () {
                 //NOTHING
+                $scope.$on('$viewContentLoaded', function () {
+                    //Here your view content is fully loaded !!
+                    $scope.loadingContent = false;
+                });
             })
         }
     }
@@ -74,12 +79,14 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                 };
                 scope.$watch(scope.isLoading, function (v) {
                     if (v) {
-                        elm.show();
+                        //elm.show();
+                        elm.removeClass('hideLoader')
                     }
                     else {
                         $timeout(function () {
-                            elm.hide()
-                        }, 50);
+                            //elm.hide()
+                            elm.addClass('hideLoader')
+                        }, 100);
                     }
                 });
             }
@@ -92,6 +99,10 @@ app.directive('loadPlugins', function ($timeout) {
         , link: function (scope, element, attr) {
             $timeout(function () {
                 scope.$emit(attr.onFinishRender);
+                $scope.$on('$viewContentLoaded', function () {
+                    //Here your view content is fully loaded !!
+                    $scope.loadingContent = false;
+                });
             });
         }
     };

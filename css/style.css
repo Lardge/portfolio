@@ -5948,13 +5948,13 @@ h2 {
   line-height: 100%;
 }
 h3 {
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 110%;
   color: #555;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 0.1em 0 3em 0;
+  margin: 0.1em 0 5em 0;
 }
 html,
 body,
@@ -6030,7 +6030,7 @@ header {
   width: 100%;
   min-height: 70px;
   position: absolute;
-  z-index: 2;
+  z-index: 10;
 }
 header .navbar-fixed {
   transform: translateY(-150px);
@@ -6074,8 +6074,8 @@ header .navbar-fixed nav .container ul.bg-list li {
   overflow: visible!important;
 }
 header .navbar-fixed nav .container ul.bg-list li .bg-frame {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: none;
   overflow: hidden;
 }
@@ -6103,12 +6103,12 @@ header nav ul.bg-list {
 }
 header nav ul.bg-list li {
   line-height: 50px;
-  margin: 5px;
+  margin: 0px;
   overflow: visible!important;
 }
 header nav ul.bg-list li .bg-frame {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: none;
   overflow: hidden;
 }
@@ -6192,6 +6192,7 @@ about #about {
   padding: 200px 0px 100px;
   min-height: 300px;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
+  z-index: 2;
 }
 about #about h2 {
   margin: 0;
@@ -6220,7 +6221,7 @@ about #about .about-item img {
 }
 timeline #timeline {
   overflow: hidden;
-  padding: 100px 50px 150px;
+  padding: 50px 50px 150px;
   background: #f2f2f2;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
 }
@@ -7223,6 +7224,26 @@ canvas {
 }
 .animation-delay-1000 {
   animation-delay: 1000ms;
+}
+.animation-delay-1250 {
+  animation-delay: 1250ms;
+}
+.animation-delay-1500 {
+  animation-delay: 1500ms;
+}
+.hideLoader {
+  pointer-events: none;
+  animation: hideLoader;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @media only screen and (max-width: 600px) {
   #home .section {

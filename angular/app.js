@@ -1,3 +1,3 @@
 //'use strict';
 /* App Module */
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ngAnimate']);

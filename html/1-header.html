@@ -3,7 +3,7 @@
     <nav id="nav" class="no-bg-shadow" role="navigation">
         <!--BACKGROUNDS-->
         <ul class="bg-list left hide-on-med-and-down">
-            <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse">
+            <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse animation-delay-{{bgItem.delay}}">
                 <div class="btn-floating btn-large circle bg-frame waves-effect waves-light" ng-style="{'background-image': 'url(' + bgItem.imgUrl + ')'}" ng-click="changeBackground(bgItem)"> </div>
             </li>
         </ul>

@@ -46,7 +46,7 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
             viewFactor: 0.1
         , });
         sr.reveal('.timeline-event');
-        sr.reveal('#about');
+        //sr.reveal('#about');
         jQuery('.parallax').parallax();
         /*smoothScroll.init({
             selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
