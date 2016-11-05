@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^larsbf.se$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.larsbf.se$
+RewriteCond %{REQUEST_URI} !larsbf.se/
+RewriteRule (.*) /larsbf.se/$1 [L]
