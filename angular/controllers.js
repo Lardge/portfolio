@@ -1,6 +1,7 @@
 /* Controllers */
-app.controller('myController', ['$scope', '$timeout', 'myService', function ($scope, $timeout, myService) {
+app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService', function ($scope, $rootScope, $timeout, myService) {
     $scope.loadingContent = true;
+    
     //GET NAV-ITEMS FROM JSON FILE
     $scope.getNavigation = function () {
         myService.getNavigation().then(function (response) {
@@ -24,6 +25,7 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
         $scope.getNavigation();
         $scope.getBackgrounds();
     });
+    
     $scope.changeBackground = function (bgItem) {
         angular.element(document.querySelector('#home-bg')).css('background-image', 'url(' + bgItem.imgUrl + ')');
         angular.element(document.querySelector('header .navbar-fixed nav')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
@@ -39,15 +41,23 @@ app.controller('myController', ['$scope', '$timeout', 'myService', function ($sc
             }
         }
     };
+    /*$scope.$on('$viewContentLoaded', function (event) {
+        console.log("content loaded");
+        $timeout(function () {
+            $scope.loadingContent = false;
+        }, 0);
+    });*/
     //ALL THE JQUERY PLUGINS
     $timeout(function () {
         window.sr = ScrollReveal({
-            //reset: true,
             viewFactor: 0.1
         , });
         sr.reveal('.timeline-event');
-        //sr.reveal('#about');
         jQuery('.parallax').parallax();
+        $scope.$on('$viewContentLoaded', function () {
+            $scope.loadingContent = false;
+        });
+        
         /*smoothScroll.init({
             selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
             selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]

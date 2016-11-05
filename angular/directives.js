@@ -2,42 +2,57 @@
 // FETCHING SECTION TEMPLATES
 app.directive('header', function () {
     return {
-        templateUrl: '../html/1-header.html'
+        priority: 1
+        , require: '^^loader'
+        , templateUrl: '../html/1-header.html'
     };
 });
 app.directive('home', function () {
     return {
-        templateUrl: '../html/2-home.html'
+        priority: 2
+        , require: '^^loader'
+        , templateUrl: '../html/2-home.html'
     };
 });
 app.directive('about', function () {
     return {
-        templateUrl: '../html/3-about.html'
+        priority: 3
+        , require: '^^loader'
+        , templateUrl: '../html/3-about.html'
     };
 });
 app.directive('timeline', function () {
     return {
-        templateUrl: '../html/4-timeline.html'
+        priority: 4
+        , require: '^^loader'
+        , templateUrl: '../html/4-timeline.html'
     };
 });
 app.directive('fun', function () {
     return {
-        templateUrl: '../html/5-fun.html'
+        priority: 5
+        , require: '^^loader'
+        , templateUrl: '../html/5-fun.html'
     };
 });
 app.directive('contact', function () {
     return {
-        templateUrl: '../html/6-contact.html'
+        priority: 6
+        , require: '^^loader'
+        , templateUrl: '../html/6-contact.html'
     };
 });
 app.directive('ngfooter', function () {
     return {
-        templateUrl: '../html/7-footer.html'
+        priority: 7
+        , require: '^^loader'
+        , templateUrl: '../html/7-footer.html'
     };
 });
 app.directive('loader', function () {
     return {
-        templateUrl: '../html/8-loader.html'
+        priority: 0
+        , templateUrl: '../html/8-loader.html'
     };
 });
 //INITIALIZE MATERILIZE FUNCTIONS
@@ -56,36 +71,44 @@ app.directive('navItemsRepeatDirective', function ($timeout) {
         }
     }
 });
-app.directive('myMainDirective', function ($timeout) {
-    return function (scope, element, attrs) {
-        if (scope.$last) {
-            $timeout(function () {
-                //NOTHING
-                $scope.$on('$viewContentLoaded', function () {
-                    //Here your view content is fully loaded !!
-                    $scope.loadingContent = false;
-                });
-            })
-        }
-    }
-});
+/*  app.directive('mainload', ['$http', '$timeout', function ($http, $timeout) {
+    return {
+              restrict: 'A'
+                , link: function (scope, element, attrs) {
+                    $timeout(function () {
+                        scope.mainIsLoading = function () {
+                            return $http.pendingRequests.length > 0;
+                        };
+                        scope.$watch(scope.isLoading, function (v) {
+                            if (v) {
+                                scope.loadingContent = false;
+                            }
+                            else {
+                                console.log("MAINLOADING DONE!");
+                            }
+                        })
+                    })
+                }
+    };
+}]);*/
 app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
     {
         return {
             restrict: 'A'
-            , link: function (scope, elm, attrs) {
+            , link: function (scope, element, attrs) {
                 scope.isLoading = function () {
                     return $http.pendingRequests.length > 0;
                 };
                 scope.$watch(scope.isLoading, function (v) {
                     if (v) {
-                        //elm.show();
-                        elm.removeClass('hideLoader')
+                        //element.show();
+                        element.removeClass('hideLoader')
                     }
                     else {
                         $timeout(function () {
-                            //elm.hide()
-                            elm.addClass('hideLoader')
+                            //element.hide()
+                            console.log("LOADING DONE!");
+                            element.addClass('hideLoader')
                         }, 100);
                     }
                 });
@@ -93,17 +116,13 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
         };
     }]);
 //NOT DOING ANYTHING
-app.directive('loadPlugins', function ($timeout) {
+app.directive('loadImg', function ($timeout) {
     return {
         restrict: 'A'
         , link: function (scope, element, attr) {
-            $timeout(function () {
-                scope.$emit(attr.onFinishRender);
-                $scope.$on('$viewContentLoaded', function () {
-                    //Here your view content is fully loaded !!
-                    $scope.loadingContent = false;
-                });
-            });
+            element.on('load', function (event) {
+                scope.loadingContent = false;
+            })
         }
-    };
+    }
 });
