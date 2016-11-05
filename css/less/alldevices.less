@@ -4,7 +4,7 @@
 // GLOBAL //
 h1 {
     font-family: "KGHappy", "BebasNeue", "Montserrat";
-    font-size: 6em;
+    font-size: 5.5em;
     line-height: 100%;
     margin: 0.5em 0px 0.1em;
     text-align: center;
@@ -17,13 +17,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 0.75em;
     line-height: 110%;
-    color: #555;
+    color: #777;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0.1em 0 5em 0;
+    margin: 0.4em 0 5em 0;
 }
 
 html,
@@ -330,7 +330,7 @@ timeline {
         }
         .card {
             .card-image {
-                height: 350px;
+                height: 300px;
                 img {
                     width: 125%;
                     width: 750px;
@@ -452,7 +452,23 @@ timeline {
 }
 
 fun {
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
+    #fun {
+        .content {
+            margin: 50px 0px;
+        }
+        img {
+            height: 280px;
+            margin: 20px 0px;
+        }
+    }
+    box-shadow: 0 2px 5px -1px rgba(0,
+    0,
+    0,
+    0.15),
+    0 9px 10px -5px rgba(0,
+    0,
+    0,
+    0.12);
 }
 
 contact {
@@ -485,6 +501,10 @@ footer {
         min-height: 200px;
         .row {
             margin-bottom: 5px;
+            a {
+                color: white;
+                font-weight: bold;
+            }
         }
     }
     .footer-copyright {
@@ -546,6 +566,7 @@ footer {
     line-height: 0;
     height: auto;
     color: rgba(255, 255, 255, .9);
+    color: white;
     .section {
         width: 100%;
     }
@@ -1517,4 +1538,27 @@ canvas {
     100% {
         opacity: 0;
     }
+}
+
+.input-field {
+    label {
+        &:after {
+            top: 70px !important;
+            height: 2.5em !important;
+        }
+    }
+}
+
+.prefix {
+    top: 8px !important;
+    left: 20px !important;
+}
+
+.submit-btn {
+    margin: 0 auto;
+    display: block;
+}
+
+.contact-form {
+    margin: 50px 0px;
 }

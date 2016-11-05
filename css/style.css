@@ -5937,7 +5937,7 @@ Modules - reusable parts of our design
 }
 h1 {
   font-family: "KGHappy", "BebasNeue", "Montserrat";
-  font-size: 6em;
+  font-size: 5.5em;
   line-height: 100%;
   margin: 0.5em 0px 0.1em;
   text-align: center;
@@ -5948,13 +5948,13 @@ h2 {
   line-height: 100%;
 }
 h3 {
-  font-size: 1em;
+  font-size: 0.75em;
   line-height: 110%;
-  color: #555;
+  color: #777;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 0.1em 0 5em 0;
+  margin: 0.4em 0 5em 0;
 }
 html,
 body,
@@ -6229,7 +6229,7 @@ timeline #timeline h1 {
   text-align: center;
 }
 timeline #timeline .card .card-image {
-  height: 350px;
+  height: 300px;
 }
 timeline #timeline .card .card-image img {
   width: 125%;
@@ -6348,6 +6348,13 @@ timeline .timeline .timeline-badge i {
 fun {
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
 }
+fun #fun .content {
+  margin: 50px 0px;
+}
+fun #fun img {
+  height: 280px;
+  margin: 20px 0px;
+}
 contact {
   background: #f2f2f2;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
@@ -6368,6 +6375,10 @@ footer #footer {
 }
 footer #footer .row {
   margin-bottom: 5px;
+}
+footer #footer .row a {
+  color: white;
+  font-weight: bold;
 }
 footer .footer-copyright {
   line-height: 50px;
@@ -6410,6 +6421,7 @@ footer .footer-copyright .text-copyright {
   line-height: 0;
   height: auto;
   color: rgba(255, 255, 255, 0.9);
+  color: white;
 }
 .parallax-container .section {
   width: 100%;
@@ -7241,6 +7253,21 @@ canvas {
   100% {
     opacity: 0;
   }
+}
+.input-field label:after {
+  top: 70px !important;
+  height: 2.5em !important;
+}
+.prefix {
+  top: 8px !important;
+  left: 20px !important;
+}
+.submit-btn {
+  margin: 0 auto;
+  display: block;
+}
+.contact-form {
+  margin: 50px 0px;
 }
 @media only screen and (max-width: 600px) {
   #home .section {

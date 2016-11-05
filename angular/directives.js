@@ -64,7 +64,7 @@ app.directive('navItemsRepeatDirective', function ($timeout) {
                     delay: 50
                 });
                 jQuery('.scrollspy').scrollSpy({
-                    scrollOffset: 81
+                    scrollOffset: 80
                 });
                 //jQuery('ul.tabs').tabs();
             })
