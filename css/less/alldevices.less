@@ -17,11 +17,11 @@ h2 {
 }
 
 h3 {
-    font-size: 0.75em;
+    font-size: 1em;
     line-height: 110%;
     color: #777;
     text-align: center;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     font-weight: bold;
     margin: 0.4em 0 5em 0;
 }
@@ -272,6 +272,7 @@ home {
             }
         }
         #home-bg {
+            overflow: hidden;
             background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
             background: url('/img/backgrounds/bg-1.jpg');
             background: white;
@@ -497,6 +498,9 @@ contact {
 }
 
 footer {
+    .section {
+        width: 100%;
+    }
     #footer {
         min-height: 200px;
         .row {
@@ -512,7 +516,7 @@ footer {
         .text-copyright {
             font-size: 14px;
             margin-left: 30px;
-            line-height: 50px;
+            line-height: 1.5em;
             max-width: 1280px;
             margin: 0 auto;
         }
@@ -1541,6 +1545,9 @@ canvas {
 }
 
 .input-field {
+    input {
+        padding: 0px 10px;
+    }
     label {
         &:after {
             top: 70px !important;
