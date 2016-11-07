@@ -1,7 +1,99 @@
 @media only screen and (max-width: 600px) {
-    #home {
-        .section {
-            top: 0;
+    html {
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 3em;
+        text-overflow: ellipsis;
+    }
+    h2 {
+        margin-bottom: 2em;
+    }
+    h3 {
+        margin-bottom: 2em;
+    }
+    header {
+        min-height: 65px;
+        .navbar-fixed {
+            height: 65px;
+            nav {
+                height: 65px;
+                .container {
+                    .page-title {
+                        font-size: 1.5em;
+                    }
+                }
+            }
         }
+    }
+    .parallax {
+        img {
+            width: 200%;
+        }
+    }
+    home {
+        #home {
+            margin: 0px 0px 100px 0px;
+            .section {
+                top: 0;
+            }
+        }
+    }
+    about {
+        #about {
+            h2 {
+                margin-bottom: 10px;
+            }
+            .s12 {
+                a {
+                    display: block;
+                }
+            }
+        }
+    }
+    timeline {
+        #timeline {
+            h3 {
+                margin-bottom: 2em;
+            }
+            .timeline-content {
+                margin: 0 !important;
+                width: 100% !important;
+                z-index: 1;
+            }
+        }
+    }
+    fun {
+        #fun {
+            img {
+                height: auto;
+            }
+            .content {
+                margin: 0px;
+            }
+        }
+    }
+    footer {
+        .section {
+            float: left;
+            padding: 0px;
+        }
+    }
+    section {
+        padding: 10px !important;
+    }
+    .section {
+        width: 95%;
+    }
+    .bounce-in-mobile {
+        -webkit-animation-name: bounce-in;
+        animation-name: bounce-in;
+        animation-delay: 750ms;
+    }
+    .contact-form {
+        margin: 50px 20px 50px -20px;
+    }
+    .input-field .prefix ~ input {
+        width: calc(~"100% - 4rem");
     }
 }

@@ -6147,7 +6147,6 @@ home #home {
   position: relative;
   overflow: visible;
   width: 100%;
-  height: 600px;
 }
 home #home .page-title {
   font-family: "KGHappy";
@@ -6388,6 +6387,7 @@ footer .footer-copyright {
 }
 footer .footer-copyright .text-copyright {
   font-size: 14px;
+  padding: 0 15px;
   margin-left: 30px;
   line-height: 1.5em;
   max-width: 1280px;
@@ -7273,24 +7273,104 @@ canvas {
   display: block;
 }
 .contact-form {
-  margin: 50px 0px;
+  margin: 100px 0px;
+}
+.contact-form textarea.materialize-textarea {
+  min-height: 10rem;
 }
 @media only screen and (max-width: 600px) {
-  #home .section {
+  html {
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 3em;
+    text-overflow: ellipsis;
+  }
+  h2 {
+    margin-bottom: 2em;
+  }
+  h3 {
+    margin-bottom: 2em;
+  }
+  header {
+    min-height: 65px;
+  }
+  header .navbar-fixed {
+    height: 65px;
+  }
+  header .navbar-fixed nav {
+    height: 65px;
+  }
+  header .navbar-fixed nav .container .page-title {
+    font-size: 1.5em;
+  }
+  .parallax img {
+    width: 200%;
+  }
+  home #home {
+    margin: 0px 0px 100px 0px;
+  }
+  home #home .section {
     top: 0;
+  }
+  about #about h2 {
+    margin-bottom: 10px;
+  }
+  about #about .s12 a {
+    display: block;
+  }
+  timeline #timeline h3 {
+    margin-bottom: 2em;
+  }
+  timeline #timeline .timeline-content {
+    margin: 0 !important;
+    width: 100% !important;
+    z-index: 1;
+  }
+  fun #fun img {
+    height: auto;
+  }
+  fun #fun .content {
+    margin: 0px;
+  }
+  footer .section {
+    float: left;
+    padding: 0px;
+  }
+  section {
+    padding: 10px !important;
+  }
+  .section {
+    width: 95%;
+  }
+  .bounce-in-mobile {
+    -webkit-animation-name: bounce-in;
+    animation-name: bounce-in;
+    animation-delay: 750ms;
+  }
+  .contact-form {
+    margin: 50px 20px 50px -20px;
+  }
+  .input-field .prefix ~ input {
+    width: calc(100% - 4rem);
   }
 }
 @media only screen and (max-width: 992px) {
+  .m12 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .m12 .about-item {
+    margin: 5px;
+  }
   .parallax-container {
-    min-height: 645px;
+    min-height: 300px;
   }
   .parallax-container .section {
     position: absolute;
     top: 20%;
   }
   #home .section {
-    top: 25%;
-    transform: translateY(195%);
     margin-top: -56px;
   }
   #home .shadow-box {
@@ -7314,5 +7394,8 @@ canvas {
 @media only screen and (min-width: 992px) {
   p {
     font-size: 100%;
+  }
+  .parallax-container {
+    min-height: 645px;
   }
 }

@@ -14,13 +14,13 @@
             </li>
         </ul>
         <!--MOBILE-NAV-ITEMS-->
-        <ul id="nav-mobile" class="side-nav">
+        <ul id="nav-mobile" class="side-nav hide-on-med-and-down">
             <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse"> <a data-scroll href="#section-1" class="hvr-outline-in">{{navItem.title}}</a> </li>
         </ul> <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a> </nav>
 </div>
 <!-- FIXED NAVBAR -->
-<div class="navbar-fixed animated">
-    <nav class="">
+<div class="navbar-fixed animated bounce-in-mobile">
+    <nav>
         <div class="container">
             <!--  <ul class="bg-list left hide-on-med-and-down">
                 <li ng-repeat="bgItem in bgItems" class="smooth-entry-reverse">
