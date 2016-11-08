@@ -6197,6 +6197,8 @@ about #about h2 {
   margin: 0;
   font-family: Roboto;
   font-weight: bolder;
+  color: #333;
+  font-size: 1.5em;
 }
 about #about .left {
   text-align: left;
