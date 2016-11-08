@@ -6077,6 +6077,7 @@ header .navbar-fixed nav .container ul.bg-list li .bg-frame {
   height: 40px;
   border: none;
   overflow: hidden;
+  background-size: 300%;
 }
 header .navbar-fixed nav .container ul.bg-list li .bg-frame img {
   display: block;
@@ -6110,6 +6111,7 @@ header nav ul.bg-list li .bg-frame {
   height: 40px;
   border: none;
   overflow: hidden;
+  background-size: 300%;
 }
 header nav ul.bg-list li .bg-frame img {
   display: block;
@@ -6387,11 +6389,14 @@ footer #footer .row a {
 footer .footer-copyright {
   line-height: 50px;
 }
-footer .footer-copyright .text-copyright {
+footer .footer-copyright .section {
+  padding: 0;
+}
+footer .footer-copyright .section .text-copyright {
   font-size: 14px;
   padding: 0 15px;
   margin-left: 30px;
-  line-height: 1.5em;
+  line-height: 50px;
   max-width: 1280px;
   margin: 0 auto;
 }
