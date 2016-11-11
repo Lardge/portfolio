@@ -41,12 +41,6 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             }
         }
     };
-    /*$scope.$on('$viewContentLoaded', function (event) {
-        console.log("content loaded");
-        $timeout(function () {
-            $scope.loadingContent = false;
-        }, 0);
-    });*/
     //ALL THE JQUERY PLUGINS
     $timeout(function () {
         window.sr = ScrollReveal({
@@ -56,11 +50,11 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         sr.reveal('h1');
         sr.reveal('h2');
         sr.reveal('h3');
-        sr.reveal('.contact-form');
-        //sr.reveal('section');
+        sr.reveal('#fun .section .content');
+        sr.reveal('#contact .section .content');
         jQuery('.parallax').parallax();
-        //$scope.$on('$viewContentLoaded', function () {
-        //    $scope.loadingContent = false;
-        //});
+        $('#nav-icon1').click(function () {
+            $(this).toggleClass('open');
+        });
     });
 }]);

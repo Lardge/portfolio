@@ -18,9 +18,14 @@
             height: 65px;
             nav {
                 height: 65px;
+                .button-collapse {
+                    width: 100%;
+                    position: static;
+                }
                 .container {
                     .page-title {
                         font-size: 1.5em;
+                        color: white;
                     }
                 }
             }
@@ -61,12 +66,16 @@
                 width: 100% !important;
                 z-index: 1;
             }
+            .timeline-event {
+                padding: 15px 0px;
+            }
         }
     }
     fun {
         #fun {
             img {
                 height: auto;
+                max-height: 200px;
             }
             .content {
                 margin: 0px;
@@ -93,7 +102,7 @@
     .contact-form {
         margin: 50px 20px 50px -20px;
     }
-    .input-field .prefix ~ input {
+    .input-field .prefix~input {
         width: calc(~"100% - 4rem");
     }
 }

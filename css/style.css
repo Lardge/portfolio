@@ -6182,7 +6182,7 @@ home #home .portrait-frame.small {
 home #home #home-bg {
   overflow: hidden;
   background: linear-gradient(145deg, #13d4b3, #138ed4, #cd24df);
-  background: url('/img/backgrounds/bg-1.jpg');
+  background: url('/img/bg/bg-1.jpg');
   background: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -6494,7 +6494,7 @@ footer .footer-copyright .section s .text-copyright {
 }
 footer.page-footer {
   margin: 0;
-  background: url('/img/backgrounds/bg-1-blur.jpg');
+  background: url('/img/bg/bg-1-blur.jpg');
   background: white;
   background-size: cover;
   -webkit-transition: background 0.2s ease-in-out;
@@ -7285,6 +7285,72 @@ canvas {
 .contact-form textarea.materialize-textarea {
   min-height: 10rem;
 }
+/* Icon 1 */
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+#nav-icon1 span:nth-child(3) {
+  top: 36px;
+}
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
 @media only screen and (max-width: 600px) {
   html {
     overflow-x: hidden;
@@ -7308,8 +7374,13 @@ canvas {
   header .navbar-fixed nav {
     height: 65px;
   }
+  header .navbar-fixed nav .button-collapse {
+    width: 100%;
+    position: static;
+  }
   header .navbar-fixed nav .container .page-title {
     font-size: 1.5em;
+    color: white;
   }
   .parallax img {
     width: 200%;
@@ -7334,8 +7405,12 @@ canvas {
     width: 100% !important;
     z-index: 1;
   }
+  timeline #timeline .timeline-event {
+    padding: 15px 0px;
+  }
   fun #fun img {
     height: auto;
+    max-height: 200px;
   }
   fun #fun .content {
     margin: 0px;
