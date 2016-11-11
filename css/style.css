@@ -6168,7 +6168,7 @@ home #home .portrait-frame {
   border: none;
   overflow: hidden;
   margin: 0;
-  background: url('/img/portarit.jpg');
+  background: url('/img/portfolio/portarit.jpg');
   background-size: cover;
   filter: contrast(150%);
   -webkit-transition: all 0.2s ease-in-out;
@@ -6392,7 +6392,7 @@ footer .footer-copyright {
 footer .footer-copyright .section {
   padding: 0;
 }
-footer .footer-copyright .section .text-copyright {
+footer .footer-copyright .section s .text-copyright {
   font-size: 14px;
   padding: 0 15px;
   margin-left: 30px;

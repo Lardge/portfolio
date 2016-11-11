@@ -1,19 +1,19 @@
 {
     "bg": [
         {
-            "id": "1"
-            , "title": "yellow"
-            , "img": "img/backgrounds/flat2.png"
+            "id": "1",
+            "title": "yellow",
+            "img": "img/backgrounds/flat2.png"
         }
         , {
-            "id": "2"
-            , "title": "blue"
-            , "img": "img/backgrounds/flat3.jpg"
+            "id": "2",
+            "title": "blue",
+            "img": "img/backgrounds/flat3.jpg"
         }
         , {
-            "id": "3"
-            , "title": "red"
-            , "img": "img/backgrounds/flat1.png"
+            "id": "3",
+            "title": "red",
+            "img": "img/backgrounds/flat1.png"
         }
     ]
 }

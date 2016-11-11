@@ -1,37 +1,37 @@
 {
     "navItems": [
         {
-            "id": "1"
-            , "title": "home"
-            , "img": "/img/svg/home-new5.svg"
-            , "toolTip": "Let's go home"
-            , "delay": "100"
+            "id": "1",
+            "title": "home",
+            "img": "/img/svg/home-new5.svg",
+            "toolTip": "Let's go home",
+            "delay": "100"
         }
         , {
-            "id": "2"
-            , "title": "about"
-            , "img": "/img/svg/user-new.svg"
-            , "toolTip": "Stuff about me"
-            , "delay": "200"
+            "id": "2",
+            "title": "about",
+            "img": "/img/svg/user-new.svg",
+            "toolTip": "Stuff about me",
+            "delay": "200"
         }
         , {
-            "id": "3"
-            , "title": "timeline"
-            , "img": "/img/svg/note-2.svg"
-            , "toolTip": "Portfolio"
-            , "delay": "300"
+            "id": "3",
+            "title": "timeline",
+            "img": "/img/svg/note-2.svg",
+            "toolTip": "Portfolio",
+            "delay": "300"
          }, {
-            "id": "4"
-            , "title": "fun"
-            , "img": "/img/svg/play-button.svg"
-            , "toolTip": "Fun zone!"
-            , "delay": "400"
+            "id": "4",
+            "title": "fun",
+            "img": "/img/svg/play-button.svg",
+            "toolTip": "Fun zone!",
+            "delay": "400"
         }, {
-            "id": "5"
-            , "title": "contact"
-            , "img": "/img/svg/glasses-3.svg"
-            , "toolTip": "Contact me"
-            , "delay": "500"
+            "id": "5",
+            "title": "contact",
+            "img": "/img/svg/glasses-3.svg",
+            "toolTip": "Contact me",
+            "delay": "500"
         }
     ]
 }

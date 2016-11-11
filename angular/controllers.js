@@ -50,9 +50,14 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
     //ALL THE JQUERY PLUGINS
     $timeout(function () {
         window.sr = ScrollReveal({
-            viewFactor: 0.1
-        , });
+            viewFactor: 0.1,
+        });
         sr.reveal('.timeline-event');
+        sr.reveal('h1');
+        sr.reveal('h2');
+        sr.reveal('h3');
+        sr.reveal('.contact-form');
+        //sr.reveal('section');
         jQuery('.parallax').parallax();
         //$scope.$on('$viewContentLoaded', function () {
         //    $scope.loadingContent = false;
