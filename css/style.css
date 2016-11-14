@@ -7281,7 +7281,7 @@ canvas {
   display: block;
 }
 .contact-form {
-  margin: 100px 0px;
+  margin: 100px 0px 0px;
 }
 .contact-form textarea.materialize-textarea {
   min-height: 10rem;
