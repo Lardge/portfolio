@@ -67,6 +67,8 @@ app.directive('navItemsRepeatDirective', function ($timeout) {
                     scrollOffset: 80
                 });
                 $(".button-collapse").sideNav();
+
+                musicplayer();
                 //jQuery('ul.tabs').tabs();
             })
         }
