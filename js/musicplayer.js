@@ -37,7 +37,7 @@ var musicplayer = function () {
             _this.text("pause");
 
             var src = _this.attr('data-link');
-            $('#cover').css('background-image', 'url(images/covers/' + _this.attr('cover') + ')');
+            $('#cover').css('background-image', 'url(img/covers/' + _this.attr('cover') + ')');
 
             $("#play").text('pause_circle_outline');
 
