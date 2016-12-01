@@ -68,7 +68,7 @@ app.directive('navItemsRepeatDirective', function ($timeout) {
                 });
                 $(".button-collapse").sideNav();
 
-                musicplayer();
+                //musicplayer();
                 //jQuery('ul.tabs').tabs();
             })
         }
@@ -111,6 +111,7 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             //element.hide()
                             console.log("LOADING DONE!");
                             element.addClass('hideLoader')
+                            musicplayer2();
                         }, 100);
                     }
                 });
