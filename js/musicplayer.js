@@ -1,21 +1,24 @@
 var musicplayer = function () {
 
     var songs = new Array();
-    $('.songPlay').each(function () {
-        $(this).parents('.collection-item');
-        songs.push($(this));
+
+    jQuery('.songPlay').each(function () {
+        jQuery(this).parents('.collection-item');
+        songs.push(jQuery(this));
     });
 
+};
 
+jQuery('document').ready(function () {
     var song = new Audio();
 
-    $('.songPlay').on("click", function () {
-        $('.collection-item[status=playing]').attr('status', 'stopped')
-        var _this = $(this);
+    jQuery('.songPlay').on("click", function () {
+        jQuery('.collection-item[status=playing]').attr('status', 'stopped')
+        var _this = jQuery(this);
         parent = _this.parents('.collection-item');
         parent.attr('status', 'playing');
 
-        $('.collection-item').not(parent).css({
+        jQuery('.collection-item').not(parent).css({
             "background-color": '#fff',
             'color': '#000',
         })
@@ -26,10 +29,10 @@ var musicplayer = function () {
 
         if (_this.attr('state') == 'stop' || typeof _this.attr('state') === 'undefined') {
 
-            $('#duration').val(0);
+            jQuery('#duration').val(0);
 
-            $('.songPlay[state=playing]').text('play_arrow');
-            $('.songPlay[state=playing]').attr('state', 'stop');
+            jQuery('.songPlay[state=playing]').text('play_arrow');
+            jQuery('.songPlay[state=playing]').attr('state', 'stop');
 
             _this.attr({
                 'state': 'playing'
@@ -37,9 +40,9 @@ var musicplayer = function () {
             _this.text("pause");
 
             var src = _this.attr('data-link');
-            $('#cover').css('background-image', 'url(img/covers/' + _this.attr('cover') + ')');
+            jQuery('#cover').css('background-image', 'url(img/covers/' + _this.attr('cover') + ')');
 
-            $("#play").text('pause_circle_outline');
+            jQuery("#play").text('pause_circle_outline');
 
             song.src = 'mp3/' + src;
             song.volume = 1;
@@ -49,17 +52,17 @@ var musicplayer = function () {
             song.addEventListener('loadedmetadata', function () {
 
                 var title = _this.attr('data-name');
-                $('.title').text(title);
+                jQuery('.title').text(title);
 
-                $('#duration').attr('max', song.duration);
+                jQuery('#duration').attr('max', song.duration);
 
                 var duration = song.duration;
-                $('.duration').text(formatSecondsAsTime(duration));
+                jQuery('.duration').text(formatSecondsAsTime(duration));
 
             });
 
         } else if (_this.attr('state') == 'playing') {
-            $("#play").text('play_circle_outline');
+            jQuery("#play").text('play_circle_outline');
             _this.text('play_arrow');
             song.pause();
             _this.attr({
@@ -71,13 +74,13 @@ var musicplayer = function () {
 
 
     song.addEventListener('timeupdate', function () {
-        $(".current").text(formatSecondsAsTime(song.currentTime))
+        jQuery(".current").text(formatSecondsAsTime(song.currentTime))
         curtime = parseInt(song.currentTime, 10);
-        $("#duration").val(curtime);
+        jQuery("#duration").val(curtime);
     });
 
-    $('#play').on('click', function () {
-        var _this = $(this);
+    jQuery('#play').on('click', function () {
+        var _this = jQuery(this);
         if (_this.text() == 'play_circle_outline') {
             song.play();
             _this.text('pause_circle_outline');
@@ -88,47 +91,47 @@ var musicplayer = function () {
         }
     });
     var shuffle = 0;
-    $('#shuffle').on('click', function () {
+    jQuery('#shuffle').on('click', function () {
         if (shuffle == 0) {
-            $(this).css({
+            jQuery(this).css({
                 'color': '#ef5350',
             });
             shuffle = 1;
         } else if (shuffle == 1) {
-            $(this).css({
+            jQuery(this).css({
                 'color': '#fff',
             });
             shuffle = 0;
         }
     });
     var repeat = 0;
-    $("#repeat").on('click', function () {
+    jQuery("#repeat").on('click', function () {
         if (repeat == 0) {
-            $(this).text('repeat_one');
+            jQuery(this).text('repeat_one');
             repeat = 1;
         } else if (repeat == 1) {
-            $(this).text('repeat');
+            jQuery(this).text('repeat');
             repeat = 0;
         }
     });
-    $("#next").on('click', function () {
-        var _this = $(this);
+    jQuery("#next").on('click', function () {
+        var _this = jQuery(this);
         if (shuffle == 1) {
             var random = songs[Math.floor(songs.length * Math.random())];
             random.trigger('click');
         } else if (shuffle == 0) {
-            var item = $('.collection-item[status="playing"]').next('.collection-item');
+            var item = jQuery('.collection-item[status="playing"]').next('.collection-item');
             item.find('.songPlay').trigger('click');
 
         }
     });
-    $("#prev").on('click', function () {
-        var _this = $(this);
+    jQuery("#prev").on('click', function () {
+        var _this = jQuery(this);
         if (shuffle == 1) {
             var random = songs[Math.floor(songs.length * Math.random())];
             random.trigger('click');
         } else if (shuffle == 0) {
-            var item = $('.collection-item[status="playing"]').prev('.collection-item');
+            var item = jQuery('.collection-item[status="playing"]').prev('.collection-item');
             item.find('.songPlay').trigger('click');
 
         }
@@ -138,24 +141,24 @@ var musicplayer = function () {
             song.currentTime = 0;
             song.play();
         } else if (repeat == 0) {
-            $('#next').trigger('click');
+            jQuery('#next').trigger('click');
         }
     });
     var volume = 1;
-    $('#volume').on('click', function () {
+    jQuery('#volume').on('click', function () {
         if (volume == 1) {
-            $(this).text('volume_off');
+            jQuery(this).text('volume_off');
             song.volume = 0;
             volume = 0;
         } else if (volume == 0) {
-            $(this).text('volume_up');
+            jQuery(this).text('volume_up');
             song.volume = 1;
             volume = 1;
         }
     });
-    $("#duration").on("change", function () {
-        song.currentTime = $(this).val();
-        $("#duration").attr("max", song.duration);
+    jQuery("#duration").on("change", function () {
+        song.currentTime = jQuery(this).val();
+        jQuery("#duration").attr("max", song.duration);
     });
 
 
@@ -178,32 +181,32 @@ var musicplayer = function () {
         return min + ':' + sec;
     }
 
-    $('#fav').on('click', function () {
+    jQuery('#fav').on('click', function () {
         color1 = Math.floor((Math.random() * 255) + 1);
         color2 = Math.floor((Math.random() * 255) + 1);
         color3 = Math.floor((Math.random() * 255) + 1);
 
         color = 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
 
-        $('#fav').queue(function (next) {
-            $('#fav').css({
+        jQuery('#fav').queue(function (next) {
+            jQuery('#fav').css({
                 "transform": "rotate(180deg)",
             });
             next();
         });
-        $('#fav').queue(function (next) {
-            $('#fav').css('color', color);
-            $('#fav').css({
+        jQuery('#fav').queue(function (next) {
+            jQuery('#fav').css('color', color);
+            jQuery('#fav').css({
                 "transform": " rotate(360deg)",
             });
             next();
         });
-        $("#fav").delay(400).queue(function (next) {
-            $("#fav").css({
+        jQuery("#fav").delay(400).queue(function (next) {
+            jQuery("#fav").css({
                 'transform': 'rotate(0deg)',
             });
             next();
         });
 
     });
-};
+});
