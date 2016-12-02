@@ -31,6 +31,7 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         angular.element(document.querySelector('.submit-btn')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
+        angular.element(document.querySelector('.music-player .controls')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
     };
     $scope.setBackground = function (bgItems) {
         var randomBgId = Math.floor((Math.random() * 3) + 1);
