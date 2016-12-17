@@ -112,7 +112,7 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             console.log("LOADING DONE!");
                             element.addClass('hideLoader')
                             musicplayer2();
-                        }, 100);
+                        }, 200);
                     }
                 });
             }
