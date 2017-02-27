@@ -6363,6 +6363,12 @@ contact {
   background: #f2f2f2;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 9px 10px -5px rgba(0, 0, 0, 0.12);
 }
+contact #contact {
+  overflow: hidden;
+}
+contact #contact .section {
+  position: relative;
+}
 /* button-collapse*/
 .button-collapse {
   color: #26a69a;
@@ -7450,11 +7456,12 @@ input[type=range]::-webkit-slider-thumb {
 }
 .bubble-svg {
   position: absolute;
-  top: 40px;
-  left: 12%;
-  width: 80%;
-  -webkit-filter: brightness(4.5);
-  filter: brightness(4.5);
+  top: -60px;
+  left: -5%;
+  width: 110%;
+  opacity: 0.10;
+  z-index: -1;
+  pointer-events: none;
 }
 .player {
   border-radius: 3px;
