@@ -20,6 +20,10 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             console.log("Error occured in Get Backgrounds");
         });
     };
+
+    $scope.portraitMove = function () {
+        jQuery('.portrait-frame').addClass('portraitMove');
+    }
     $(document).ready(function () {
         $scope.getNavigation();
         $scope.getBackgrounds();

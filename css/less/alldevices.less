@@ -238,6 +238,7 @@ header {
 
 // HOME //
 home {
+    z-index: 5;
     #home {
         margin: 0px;
         background: none !important;
@@ -252,15 +253,19 @@ home {
             text-align: center;
             width: 720px;
             line-height: 100%;
-            &:focus {
-                //.animated;
-                //.rubberBand;
+            div {
+                line-height: 110%;
+                &:hover {
+                    .animated;
+                    .rubberBand;
+                }
             }
         }
         .portrait-frame {
             width: 250px;
             height: 250px;
             position: absolute;
+            z-index: 1000;
             bottom: -3%;
             left: 50%;
             transform: translate(-50%, 50%);
@@ -1804,7 +1809,7 @@ input[type=range]::-webkit-slider-thumb {
     position: relative;
     width: 350px;
     height: 290px;
-    margin: 150px auto;
+    // margin: 150px auto;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     background: #222;

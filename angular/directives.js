@@ -112,7 +112,11 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             console.log("LOADING DONE!");
                             element.addClass('hideLoader')
                             musicplayer2();
+
                         }, 200);
+                        jQuery.getJSON('//freegeoip.net/json/?callback=?', function (data) {
+                            console.log(JSON.stringify(data, null, 2));
+                        });
                     }
                 });
             }
