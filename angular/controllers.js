@@ -22,8 +22,29 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
     };
 
     $scope.portraitMove = function () {
-        jQuery('.portrait-frame').addClass('portraitMove');
-    }
+        jQuery('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
+        $timeout(function () {
+            jQuery('.portrait-frame').toggleClass('portraitMove');
+        }, 1);
+    };
+
+    /*window.addEventListener('scroll', function (ev) {
+        var scrollTop = jQuery(window).scrollTop(),
+            elementOffset = jQuery('#home-bg').offset().top,
+            distance = (elementOffset - scrollTop);
+
+        if (jQuery(window).scrollTop() < 0) {
+            jQuery('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
+            $timeout(function () {
+                jQuery('.portrait-frame').addClass('portraitMove');
+            }, 1);
+
+        }
+        if (((scrollTop - 70) > 0) && jQuery('.portrait-frame').hasClass('portraitMove')) {
+            jQuery('.portrait-frame').removeClass('portraitMove');
+        }
+        console.log(scrollTop);
+    });*/
 
     jQuery(document).ready(function () {
         $scope.getNavigation();

@@ -4,47 +4,21 @@
  */
 (function ($) {
     'use strict';
-    /*    var didScroll;
-        var lastScrollTop = 0;
-        var delta = 400;
-        var navbarHeight = $('.navbar-fixed').outerHeight();
-        $(window).scroll(function () {
-            didScroll = true;
-        });*/
-    /*    setInterval(function () {
-            if (didScroll) {
-                hasScrolled();
-                didScroll = false;
-            }
-        }, 250);*/
-    /*    function hasScrolled() {
-            var st = $('body').scrollTop();
-            // Make sure they scroll more than delta
-            if (Math.abs(lastScrollTop - st) <= delta) return;
-            // If they scrolled down and are past the navbar, add class .nav-up.
-            // This is necessary so you never see what is "behind" the navbar.
-            if (st > lastScrollTop && st > navbarHeight) {
-                // Scroll Down
-                $('.navbar-fixed').removeClass('bounce-out').addClass('bounce-in');
-            }
-            else {
-                // Scroll Up
-                if (st + $(window).height() < $(document).height()) {
-                    $('.navbar-fixed').removeClass('bounce-in').addClass('bounce-out');
-                }
-            }
-            lastScrollTop = st;
-        }*/
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.navbar-fixed').removeClass('bounce-out').addClass('bounce-in');
-            //$('.portrait-frame').addClass('small');
-        }
-        else {
+        } else {
             if ($('.navbar-fixed').hasClass('bounce-in')) {
                 $('.navbar-fixed').removeClass('bounce-in').addClass('bounce-out');
-                //$('.portrait-frame').removeClass('small');
             }
+        }
+        if ($('#home-bg').height() - $(this).scrollTop() <= 150) {
+            $('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
+            setTimeout(function () {
+                $('.portrait-frame').addClass('portraitMove');
+            }, 1);
+        } else {
+            $('.portrait-frame').removeClass('portraitMove');
         }
     });
 })(jQuery);
