@@ -6249,19 +6249,21 @@ home #home .page-title {
   text-align: center;
   width: 720px;
   line-height: 100%;
+  cursor: default;
 }
 home #home .page-title div {
   line-height: 110%;
 }
-home #home .page-title div:hover {
+home #home .page-title .rubber-letter {
+  display: inline-block;
+  cursor: pointer;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
+  margin: 0px -18px;
 }
 home #home .portrait-frame {
   width: 250px;

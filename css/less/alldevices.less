@@ -253,12 +253,16 @@ home {
             text-align: center;
             width: 720px;
             line-height: 100%;
+            cursor: default;
+            //cursor: pointer;
             div {
                 line-height: 110%;
-                &:hover {
-                    .animated;
-                    .rubberBand;
-                }
+            }
+            .rubber-letter {
+                display: inline-block;
+                cursor: pointer;
+                .animated;
+                margin: 0px -18px;
             }
         }
         .portrait-frame {

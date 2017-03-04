@@ -24,10 +24,13 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
     $scope.portraitMove = function () {
         jQuery('.portrait-frame').addClass('portraitMove');
     }
-    $(document).ready(function () {
+
+    jQuery(document).ready(function () {
         $scope.getNavigation();
         $scope.getBackgrounds();
+
     });
+
     $scope.changeBackground = function (bgItem) {
         angular.element(document.querySelector('#home-bg')).css('background-image', 'url(' + bgItem.imgUrl + ')');
         angular.element(document.querySelector('#home-bg img')).attr("src", bgItem.imgUrl);

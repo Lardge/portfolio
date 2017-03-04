@@ -112,6 +112,17 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             console.log("LOADING DONE!");
                             element.addClass('hideLoader')
                             musicplayer2();
+                            jQuery('.rubber-letter').mouseenter(function () {
+                                if (!jQuery(this).hasClass('rubberBand')) {
+                                    jQuery(this).addClass('rubberBand');
+                                    scope.thisObject(jQuery(this));
+                                }
+                            });
+                            scope.thisObject = function (thisObject) {
+                                $timeout(function () {
+                                    jQuery(thisObject).removeClass('rubberBand')
+                                }, 501);
+                            }
 
                         }, 200);
                         jQuery.getJSON('//freegeoip.net/json/?callback=?', function (data) {
