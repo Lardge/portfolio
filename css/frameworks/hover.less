@@ -5517,9 +5517,29 @@
     }
 }
 
+@keyframes portraitMoveBack {
+    0% {
+        transform: rotate(-15deg) scale3d(0.5, 0.5, 1) translate(-320%, 100%);
+    }
+    100% {
+        transform: rotate(0deg) scale3d(1, 1, 1) translate(-50%, 47%);
+    }
+}
+
 .portraitMove {
-    -webkit-animation-name: portraitMove !important;
-    animation-name: portraitMove !important;
+    //animation-fill-mode: forwards !important;
+    //-webkit-animation: portraitMove 0.5s;
+    //-moz-animation: portraitMove 0.5s;
+    //animation: portraitMove 0.5s;
+    opacity: 1 !important;
+    animation-delay: 0ms !important;
+    transform: rotate(-15deg) scale3d(0.5, 0.5, 1) translate(-320%, 100%) !important;
+    animation: none !important;
+}
+
+.portraitMoveBack {
+    -webkit-animation-name: portraitMoveBack !important;
+    animation-name: portraitMoveBack !important;
     opacity: 1 !important;
     animation-delay: 0ms !important;
 }
