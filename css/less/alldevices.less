@@ -109,6 +109,13 @@ ngfooter {
     position: relative;
 }
 
+.rubber-letter {
+    display: inline-block;
+    cursor: pointer;
+    .animated;
+    margin: 0px -5px;
+}
+
 // HEADER & NAV //
 header {
     width: 100%;
@@ -131,6 +138,14 @@ header {
             //background: rgba(255, 255, 255, s0.2);
             //background: url('/img/backgrounds/bg-1-blur.jpg');
             //background: white;
+            .rubber-letter {
+                //img {
+                .animated;
+                display: inline-block;
+                cursor: pointer;
+                margin: 0px 0px;
+                //}
+            }
             .container {
                 max-width: @content-width;
                 position: relative;
@@ -138,6 +153,7 @@ header {
                 .page-title {
                     font-family: "KGHappy";
                     position: absolute;
+                    cursor: default;
                     top: 50%;
                     transform: translateY(-50%);
                     left: 0;
@@ -268,23 +284,26 @@ home {
         .portrait-frame {
             width: 250px;
             height: 250px;
-            position: absolute;
+            position: relative;
             z-index: 1000;
-            bottom: -3%;
-            left: 50%;
-            transform: translate(-50%, 50%);
+            bottom: -480px;
             border: none;
             overflow: hidden;
-            margin: 0;
+            margin: 0 auto;
             background: url('/img/portfolio/portarit.jpg');
             background-size: cover;
             filter: contrast(150%);
-            -webkit-transition: all 0.3s cubic-bezier(.5, 0.5, .5, 1.5);
-            transition: all 0.3s cubic-bezier(.8, -1.5, .2, 1.0);
+            -webkit-transition: all 0.4s cubic-bezier(.5, 0.5, .5, 1.5);
+            transition: all 0.4s cubic-bezier(.6, -2.0, .4, 2.0);
+            transition-delay: 200ms;
+            cursor: pointer;
             &.small {
                 width: 125px;
                 height: 125px;
                 bottom: -110px;
+            }
+            &.opacity-1 {
+                opacity: 1 !important;
             }
         }
         #home-bg {
@@ -2119,4 +2138,25 @@ input[type=range]::-webkit-slider-thumb {
     90.001% {
         opacity: 0;
     }
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
 }

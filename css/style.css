@@ -4797,108 +4797,6 @@
   width: 25px;
   height: 25px;
 }
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-@-webkit-keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-@keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    -ms-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    -ms-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    -ms-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    -ms-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    -ms-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
-}
-@keyframes portraitMove {
-  100% {
-    transform: rotate(-15deg) scale3d(0.5, 0.5, 1) translate(-320%, 100%);
-  }
-}
-@keyframes portraitMoveBack {
-  0% {
-    transform: rotate(-15deg) scale3d(0.5, 0.5, 1) translate(-320%, 100%);
-  }
-  100% {
-    transform: rotate(0deg) scale3d(1, 1, 1) translate(-50%, 47%);
-  }
-}
-.portraitMove {
-  opacity: 1 !important;
-  animation-delay: 0ms !important;
-  transform: rotate(-15deg) scale3d(0.5, 0.5, 1) translate(-320%, 100%) !important;
-  animation: none !important;
-}
-.portraitMoveBack {
-  -webkit-animation-name: portraitMoveBack !important;
-  animation-name: portraitMoveBack !important;
-  opacity: 1 !important;
-  animation-delay: 0ms !important;
-}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1
@@ -8338,20 +8236,102 @@ keyframes
 @keyframes smooth-entry-reverse-portrait {
   0% {
     opacity: 0;
-    -webkit-transform: translate(-50%, 55%);
-    -moz-transform: translate(-50%, 55%);
-    -ms-transform: translate(-50%, 55%);
-    -o-transform: translate(-50%, 55%);
-    transform: translate(-50%, 55%);
+    -webkit-transform: translate(0%, 5%);
+    -moz-transform: translate(0%, 5%);
+    -ms-transform: translate(0%, 5%);
+    -o-transform: translate(0%, 5%);
+    transform: translate(0%, 5%);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(-50%, 50%);
-    -moz-transform: translate(-50%, 50%);
-    -ms-transform: translate(-50%, 50%);
-    -o-transform: translate(-50%, 50%);
-    transform: translate(-50%, 50%);
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
   }
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    -ms-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    -ms-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    -ms-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    -ms-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    -ms-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+.portraitMove {
+  opacity: 1 !important;
+  transform: rotate(-5deg) translate(0px, 25px) !important;
+  animation: none !important;
 }
 /* -------------------------------- 
 
@@ -9039,6 +9019,17 @@ ngfooter {
   display: block;
   position: relative;
 }
+.rubber-letter {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  margin: 0px -5px;
+}
 header {
   width: 100%;
   min-height: 70px;
@@ -9060,6 +9051,17 @@ header .navbar-fixed nav {
   padding-top: 10px;
   background-size: cover;
 }
+header .navbar-fixed nav .rubber-letter {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0px 0px;
+}
 header .navbar-fixed nav .container {
   max-width: 920px;
   position: relative;
@@ -9068,6 +9070,7 @@ header .navbar-fixed nav .container {
 header .navbar-fixed nav .container .page-title {
   font-family: "KGHappy";
   position: absolute;
+  cursor: default;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -9193,24 +9196,27 @@ home #home .page-title .rubber-letter {
 home #home .portrait-frame {
   width: 250px;
   height: 250px;
-  position: absolute;
+  position: relative;
   z-index: 1000;
-  bottom: -3%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  bottom: -480px;
   border: none;
   overflow: hidden;
-  margin: 0;
+  margin: 0 auto;
   background: url('/img/portfolio/portarit.jpg');
   background-size: cover;
   filter: contrast(150%);
-  -webkit-transition: all 0.3s cubic-bezier(0.5, 0.5, 0.5, 1.5);
-  transition: all 0.3s cubic-bezier(0.8, -1.5, 0.2, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.5, 0.5, 0.5, 1.5);
+  transition: all 0.4s cubic-bezier(0.6, -2, 0.4, 2);
+  transition-delay: 200ms;
+  cursor: pointer;
 }
 home #home .portrait-frame.small {
   width: 125px;
   height: 125px;
   bottom: -110px;
+}
+home #home .portrait-frame.opacity-1 {
+  opacity: 1 !important;
 }
 home #home #home-bg {
   overflow: hidden;
@@ -10761,6 +10767,23 @@ input[type=range]::-webkit-slider-thumb {
   90.001% {
     opacity: 0;
   }
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
 }
 @media only screen and (max-width: 600px) {
   html {

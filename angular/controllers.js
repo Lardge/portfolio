@@ -21,12 +21,15 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         });
     };
 
-    $scope.portraitMove = function () {
+    /*$scope.portraitMove = function () {
         jQuery('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
+        jQuery('.portrait-frame').removeClass('animation-delay-1000');
+        jQuery('.portrait-frame').addClass('opacity-1');
         $timeout(function () {
-            jQuery('.portrait-frame').toggleClass('portraitMove');
+            //jQuery('.portrait-frame').toggleClass('portraitMove');
+            jQuery('.portrait-frame').toggleClass('rubberBand');
         }, 1);
-    };
+    };*/
 
     /*window.addEventListener('scroll', function (ev) {
         var scrollTop = jQuery(window).scrollTop(),

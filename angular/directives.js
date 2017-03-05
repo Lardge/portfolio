@@ -113,14 +113,30 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             element.addClass('hideLoader')
                             musicplayer2();
                             jQuery('.rubber-letter').mouseenter(function () {
-                                if (!jQuery(this).hasClass('rubberBand')) {
+                                if (jQuery("img", this).length) {
+                                    if (!jQuery("img", this).hasClass('rubberBand')) {
+                                        jQuery("img", this).addClass('rubberBand');
+                                        scope.removeRubberBand(jQuery("img", this));
+                                    }
+                                } else if (!jQuery(this).hasClass('rubberBand')) {
                                     jQuery(this).addClass('rubberBand');
-                                    scope.thisObject(jQuery(this));
+                                    scope.removeRubberBand(jQuery(this));
                                 }
                             });
-                            scope.thisObject = function (thisObject) {
+                            jQuery('.rubber-portrait').click(function () {
+                                jQuery('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
+                                jQuery('.portrait-frame').removeClass('animation-delay-1000');
+                                jQuery('.portrait-frame').addClass('opacity-1');
+                                if (!jQuery(this).hasClass('rubberBand')) {
+                                    jQuery(this).addClass('rubberBand');
+                                    scope.removeRubberBand(jQuery(this));
+
+                                }
+                            });
+                            scope.removeRubberBand = function (thisObject) {
                                 $timeout(function () {
                                     jQuery(thisObject).removeClass('rubberBand')
+
                                 }, 501);
                             }
 
