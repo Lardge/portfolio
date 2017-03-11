@@ -1,6 +1,7 @@
 // MIXINS
 @nav-height: 65px;
 @content-width: 920px;
+@portfolio-blue: #2196F3;
 // GLOBAL //
 h1 {
     font-family: "KGHappy", "BebasNeue", "Montserrat";
@@ -24,6 +25,10 @@ h3 {
     //text-transform: uppercase;
     font-weight: bold;
     margin: 0.4em 0 5em 0;
+}
+
+html {
+    color: #444;
 }
 
 html,
@@ -158,6 +163,12 @@ header {
                     transform: translateY(-50%);
                     left: 0;
                     font-size: 2.5em;
+                    span {
+                        margin: 0px -7px;
+                        &.space {
+                            margin: 0px 0px;
+                        }
+                    }
                 }
                 ul {
                     position: absolute;
@@ -2176,6 +2187,29 @@ input[type=range]::-webkit-slider-thumb {
     90.001% {
         opacity: 0;
     }
+}
+
+.input-field .prefix.active {
+    color: @portfolio-blue;
+    color: #444 !important;
+}
+
+input,
+textarea {
+    color: #444 !important;
+}
+
+input:focus,
+textarea:focus {
+    +label {
+        color: #444 !important;
+    }
+    border-color: #444 !important;
+    color: #444 !important;
+    box-shadow: 0px 1px 0px 0px #444 !important;
+    //border-color: @portfolio-blue !important;
+    //color: @portfolio-blue !important;
+    //box-shadow: 0px 1px 0px 0px @portfolio-blue !important;
 }
 
 .clearfix:after {

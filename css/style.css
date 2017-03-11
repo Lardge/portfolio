@@ -8948,6 +8948,9 @@ h3 {
   font-weight: bold;
   margin: 0.4em 0 5em 0;
 }
+html {
+  color: #444;
+}
 html,
 body,
 .section,
@@ -9075,6 +9078,12 @@ header .navbar-fixed nav .container .page-title {
   transform: translateY(-50%);
   left: 0;
   font-size: 2.5em;
+}
+header .navbar-fixed nav .container .page-title span {
+  margin: 0px -7px;
+}
+header .navbar-fixed nav .container .page-title span.space {
+  margin: 0px 0px;
 }
 header .navbar-fixed nav .container ul {
   position: absolute;
@@ -10798,6 +10807,24 @@ input[type=range]::-webkit-slider-thumb {
   90.001% {
     opacity: 0;
   }
+}
+.input-field .prefix.active {
+  color: #2196f3;
+  color: #444 !important;
+}
+input,
+textarea {
+  color: #444 !important;
+}
+input:focus,
+textarea:focus {
+  border-color: #444 !important;
+  color: #444 !important;
+  box-shadow: 0px 1px 0px 0px #444 !important;
+}
+input:focus + label,
+textarea:focus + label {
+  color: #444 !important;
 }
 .clearfix:after {
   content: ".";

@@ -55,6 +55,13 @@ app.directive('loader', function () {
         templateUrl: 'html/8-loader.html'
     };
 });
+app.directive('yu', function () {
+    return {
+        priority: 0,
+        templateUrl: 'html/yu.html'
+    };
+});
+
 //INITIALIZE MATERILIZE FUNCTIONS
 app.directive('navItemsRepeatDirective', function ($timeout) {
     return function (scope, element, attrs) {
@@ -114,15 +121,8 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             musicplayer2();
 
                             var ap = new APlayer({
-                                element: document.getElementById('player1'), // Optional, player element
-                                narrow: false, // Optional, narrow style
-                                autoplay: false, // Optional, autoplay song(s), not supported by mobile browsers
-                                showlrc: 0, // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
-                                mutex: true, // Optional, pause other players when this player playing
-                                theme: '#e6d0b2', // Optional, theme color, default: #b7daff
-                                mode: 'random', // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
-                                preload: 'metadata', // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
-                                listmaxheight: '513px', // Optional, max height of play list
+                                element: document.getElementById('player1'),
+                                theme: '#2196F3',
                                 music: { // Required, music info, see: ###With playlist
                                     title: 'Down the walls', // Required, music title
                                     author: 'Lars', // Required, music author
@@ -132,7 +132,8 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             });
 
                             var ap = new APlayer({
-                                element: document.getElementById('player2'), // Optional, player element
+                                element: document.getElementById('player2'),
+                                theme: '#2196F3',
                                 music: { // Required, music info, see: ###With playlist
                                     title: 'Down the walls', // Required, music title
                                     author: 'Lars', // Required, music author
@@ -142,7 +143,8 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             });
 
                             var ap = new APlayer({
-                                element: document.getElementById('player3'), // Optional, player element
+                                element: document.getElementById('player3'),
+                                theme: '#2196F3',
                                 music: { // Required, music info, see: ###With playlist
                                     title: 'Down the walls', // Required, music title
                                     author: 'Lars', // Required, music author
