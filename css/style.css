@@ -10655,6 +10655,37 @@ input[type=range]::-webkit-slider-thumb {
   right: auto;
   left: -27px;
 }
+.aplayer {
+  height: 100% !important;
+  width: 100% !important;
+  font-family: Roboto !important;
+}
+.aplayer .aplayer-info {
+  padding: 6px 7px 0 10px !important;
+}
+.aplayer .aplayer-info .aplayer-music {
+  text-transform: uppercase;
+}
+.aplayer .aplayer-pic .aplayer-play {
+  width: 50px !important;
+  height: 50px !important;
+  bottom: 50% !important;
+  right: 50% !important;
+  margin: 0 -27px -28px 0 !important;
+}
+.aplayer .aplayer-pic .aplayer-button {
+  -webkit-backface-visibility: hidden;
+}
+.aplayer .aplayer-pic .aplayer-icon-pause {
+  top: -2px !important;
+}
+.aplayer .aplayer-pic .aplayer-icon-play {
+  position: absolute;
+  top: 10px !important;
+  left: 12px !important;
+  height: 30px !important;
+  width: 30px !important;
+}
 .loader {
   background: #43a2ce;
 }

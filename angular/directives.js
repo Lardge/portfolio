@@ -112,6 +112,46 @@ app.directive('loading', ['$http', '$timeout', function ($http, $timeout)
                             console.log("LOADING DONE!");
                             element.addClass('hideLoader')
                             musicplayer2();
+
+                            var ap = new APlayer({
+                                element: document.getElementById('player1'), // Optional, player element
+                                narrow: false, // Optional, narrow style
+                                autoplay: false, // Optional, autoplay song(s), not supported by mobile browsers
+                                showlrc: 0, // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+                                mutex: true, // Optional, pause other players when this player playing
+                                theme: '#e6d0b2', // Optional, theme color, default: #b7daff
+                                mode: 'random', // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+                                preload: 'metadata', // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+                                listmaxheight: '513px', // Optional, max height of play list
+                                music: { // Required, music info, see: ###With playlist
+                                    title: 'Down the walls', // Required, music title
+                                    author: 'Lars', // Required, music author
+                                    url: 'mp3/Lars_Beck-Friis_Down_The_Walls.mp3', // Required, music url
+                                    pic: 'img/covers/wall2.jpg', // Optional, music picture
+                                }
+                            });
+
+                            var ap = new APlayer({
+                                element: document.getElementById('player2'), // Optional, player element
+                                music: { // Required, music info, see: ###With playlist
+                                    title: 'Down the walls', // Required, music title
+                                    author: 'Lars', // Required, music author
+                                    url: 'mp3/Lars_Beck-Friis_Down_The_Walls.mp3', // Required, music url
+                                    pic: 'img/covers/wall2.jpg', // Optional, music picture
+                                }
+                            });
+
+                            var ap = new APlayer({
+                                element: document.getElementById('player3'), // Optional, player element
+                                music: { // Required, music info, see: ###With playlist
+                                    title: 'Down the walls', // Required, music title
+                                    author: 'Lars', // Required, music author
+                                    url: 'mp3/Lars_Beck-Friis_Down_The_Walls.mp3', // Required, music url
+                                    pic: 'img/covers/wall2.jpg', // Optional, music picture
+                                }
+                            });
+
+
                             jQuery('.rubber-letter').mouseenter(function () {
                                 if (jQuery("img", this).length) {
                                     if (!jQuery("img", this).hasClass('rubberBand')) {
