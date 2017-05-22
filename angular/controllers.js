@@ -44,7 +44,7 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             angular.element(document.querySelector('#home-bg img')).attr("src", bgItem.imgUrl);
             angular.element(document.querySelector('header .navbar-fixed nav')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
             angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
-            angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
+            //angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
             angular.element(document.querySelector('.submit-btn')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
             angular.element(document.querySelector('.music-player .controls')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         };
