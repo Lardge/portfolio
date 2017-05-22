@@ -1,5 +1,5 @@
 <!-- STATIC NAVBAR -->
-<div class="navbar">
+<div class="navbar ng-cloak">
     <nav id="nav" class="no-bg-shadow" role="navigation">
         <!--BACKGROUNDS-->
         <ul class="bg-list left hide-on-med-and-down">
@@ -10,7 +10,7 @@
         <!--NAV-ITEMS-->
         <ul class="link-list right hide-on-med-and-down">
             <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse animation-delay-{{navItem.delay}}" nav-items-repeat-directive>
-                <a href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
+                <a href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img ng-src="{{navItem.img}}" /></a>
             </li>
         </ul>
         <!--MOBILE-NAV-ITEMS-->
@@ -20,7 +20,7 @@
     </nav>
 </div>
 <!-- FIXED NAVBAR -->
-<div class="navbar-fixed animated bounce-in-mobile">
+<div class="navbar-fixed animated bounce-in-mobile  ng-cloak">
     <nav>
         <div class="container">
             <!--  <ul class="bg-list left hide-on-med-and-down">
@@ -47,7 +47,7 @@
                 <span class="rubber-letter">s</span></div>
             <ul class="link-list right hide-on-med-and-down ">
                 <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse">
-                    <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in rubber-letter tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img src="{{navItem.img}}" /></a>
+                    <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in rubber-letter tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img ng-src="{{navItem.img}}" /></a>
                 </li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse right">

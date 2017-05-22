@@ -2,6 +2,16 @@
 @nav-height: 65px;
 @content-width: 920px;
 @portfolio-blue: #2196F3;
+//NG-CLOAK
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
 // GLOBAL //
 h1 {
     font-family: "KGHappy", "BebasNeue", "Montserrat";
@@ -714,8 +724,8 @@ footer {
 
 footer.page-footer {
     margin: 0;
-    background: url('/img/bg/bg-1-blur.jpg');
-    background-position: 50%;
+    background-image: url('/img/bg/bg-1-blur.jpg');
+    background-position: 50% !important;
     background: white;
     background-size: cover;
     -webkit-transition: background 0.2s ease-in-out;
