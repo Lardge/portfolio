@@ -136,6 +136,7 @@ header {
         nav {
             -webkit-transition: background 0.2s ease-in-out;
             transition: background 0.2s ease-in-out;
+            background-position: 50%;
             max-width: 100%;
             height: 90px;
             padding-top: 10px;
@@ -324,6 +325,7 @@ home {
             background: white;
             background-size: cover;
             background-repeat: no-repeat;
+            background: none !important;
             -webkit-transition: background 0.2s ease-in-out;
             transition: background 0.2s ease-in-out;
         }
@@ -713,6 +715,7 @@ footer {
 footer.page-footer {
     margin: 0;
     background: url('/img/bg/bg-1-blur.jpg');
+    background-position: 50%;
     background: white;
     background-size: cover;
     -webkit-transition: background 0.2s ease-in-out;
@@ -1589,7 +1592,7 @@ canvas {
 .hideLoader {
     pointer-events: none;
     animation: hideLoader;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards
 }
 
@@ -1622,6 +1625,8 @@ canvas {
 .submit-btn {
     margin: 0 auto;
     display: block;
+    background-size: cover;
+    background-position: 50%;
 }
 
 .contact-form {
@@ -2074,6 +2079,11 @@ input[type=range]::-webkit-slider-thumb {
 @c-bg: #43A2CE;
 .loader {
     background: @c-bg;
+    transition: 500ms all ease-in-out;
+    &.hide-loader {
+        pointer-events: none;
+        opacity: 0;
+    }
 }
 
 .drip {

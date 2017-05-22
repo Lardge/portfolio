@@ -13,13 +13,13 @@
 
 <body ng-controller="myController">
     <yu></yu>
-    <header></header>
-    <home></home>
-    <about></about>
-    <timeline></timeline>
-    <fun></fun>
-    <contact></contact>
-    <ngfooter></ngfooter>
+    <header ng-show="contentLoaded"></header>
+    <home ng-show="contentLoaded"></home>
+    <about ng-show="contentLoaded"></about>
+    <timeline ng-show="contentLoaded"></timeline>
+    <fun ng-show="contentLoaded"></fun>
+    <contact ng-show="contentLoaded"></contact>
+    <ngfooter ng-show="contentLoaded"></ngfooter>
     <loader></loader>
 </body>
 
@@ -37,14 +37,15 @@
 <script src="js/materialize.min.js"></script>
 <script src="js/scrollreveal.min.js"></script>
 <script src="js/nav-reveal.js"></script>
-<script src="js/musicplayer2.js"></script>
-<script src="js/APlayer.min.js"></script>
+<!--<script src="js/musicplayer2.js"></script>
+<script src="js/APlayer.min.js"></script>-->
 <script src="js/plugins.js"></script>
 
 
 <!-- CDN -->
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.4/jquery.jplayer/jquery.jplayer.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.4/add-on/jplayer.playlist.min.js"></script>
+-->
 
 </html>

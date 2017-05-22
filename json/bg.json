@@ -3,22 +3,22 @@
         {
             "id": "1",
             "title": "blue",
-            "imgUrl": "img/bg/bg-6.jpg",
-            "imgBlurUrl": "img/bg/bg-6-blur.jpg",
+            "imgUrl": "img/bg/bg-8.svg",
+            "imgBlurUrl": "img/bg/bg-8.svg",
             "delay": "500"
         },
         {
             "id": "2",
             "title": "green",
-            "imgUrl": "img/bg/bg-7.jpg",
-            "imgBlurUrl": "img/bg/bg-7-blur.jpg",
+            "imgUrl": "img/bg/bg-3.svg",
+            "imgBlurUrl": "img/bg/bg-3.svg",
             "delay": "300"
         },
         {
             "id": "3",
             "title": "yellow",
-            "imgUrl": "img/bg/bg-5.jpg",
-            "imgBlurUrl": "img/bg/bg-5-blur.jpg",
+            "imgUrl": "img/bg/bg-7.svg",
+            "imgBlurUrl": "img/bg/bg-7.svg",
             "delay": "100"
         }
     ]
