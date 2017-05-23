@@ -86,7 +86,7 @@ app.directive('imageOnLoad', function ($rootScope) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-            element.bind('load', function () {
+            element.bind('load', function (element) {
                 console.log('image is loaded');
                 scope.$broadcast('imagesLoaded');
                 //$rootScope.imagesLoaded = true;

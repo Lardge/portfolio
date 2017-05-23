@@ -10170,6 +10170,7 @@ svg:not(:root) {
 }
 .parallax img {
   display: block;
+  min-width: 110%;
 }
 .spin-test {
   margin: 20px;
@@ -10343,7 +10344,7 @@ canvas {
 .submit-btn {
   margin: 0 auto;
   display: block;
-  background-size: cover;
+  background-size: 300%;
   background-position: 50%;
 }
 .contact-form {
