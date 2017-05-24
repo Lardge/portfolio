@@ -88,8 +88,12 @@ app.directive('imageOnLoad', function ($rootScope) {
         link: function (scope, element, attrs) {
             element.bind('load', function (element) {
                 console.log('image is loaded');
-                scope.$broadcast('imagesLoaded');
-                //$rootScope.imagesLoaded = true;
+                scope.imagesLoadedCounter++;
+                
+                //Check if ALL images are loaded
+                if (scope.imagesLoadedCounter === scope.imagesLoadedRequired) {
+                    scope.$broadcast('imagesLoaded');
+                }
             });
             element.bind('error', function () {
                 console.log('image could not be loaded');

@@ -2,6 +2,8 @@
 app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService', '$window', '$http',
     function ($scope, $rootScope, $timeout, myService, $window, $http) {
         $scope.contentLoaded = false;
+        $scope.imagesLoadedCounter = 0;
+        $scope.imagesLoadedRequired = 4;
 
         //WHEN HOME BACKGROUND IMAGE IS LOADED
         $scope.$on('imagesLoaded', function () {

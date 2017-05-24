@@ -2089,11 +2089,18 @@ input[type=range]::-webkit-slider-thumb {
 @c-splash: #FFF;
 @c-bg: #43A2CE;
 .loader {
-    background: @c-bg;
+    background: white; //@c-bg;
     transition: 500ms all ease-in-out;
     &.hide-loader {
         pointer-events: none;
         opacity: 0;
+    }
+    .svg-spinner {
+        top: 50%;
+        width: 60px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
     }
 }
 
