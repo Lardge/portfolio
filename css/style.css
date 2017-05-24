@@ -10712,17 +10712,16 @@ input[type=range]::-webkit-slider-thumb {
 .loader {
   background: white;
   transition: 500ms all ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader.hide-loader {
   pointer-events: none;
   opacity: 0;
 }
 .loader .svg-spinner {
-  top: 50%;
   width: 60px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
 }
 .drip {
   width: 200px;

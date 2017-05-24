@@ -2091,16 +2091,21 @@ input[type=range]::-webkit-slider-thumb {
 .loader {
     background: white; //@c-bg;
     transition: 500ms all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     &.hide-loader {
         pointer-events: none;
         opacity: 0;
     }
     .svg-spinner {
-        top: 50%;
+        //top: 50%;
         width: 60px;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
+        //position: absolute;
+        //left: 50%;
+        //transform: translate(-100%, -100%);
+        //display: block;
     }
 }
 
