@@ -14,9 +14,19 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.initializeScrollReveal();
             $scope.initializeWindowScroll();
 
-            $('#nav-icon1').click(function () {
-                $(this).toggleClass('open');
+            $scope.sidenav = new Sidenav({
+                content: document.getElementById("contact"),
+                sidenav: document.getElementById("sidenav"),
+                backdrop: document.getElementById("backdrop")
             });
+
+            document.getElementById("menu-toggle").addEventListener("click", function () {
+                $scope.sidenav.open(); // or sidenav.close
+            });
+
+            /*$('#nav-icon1').click(function () {
+                $(this).toggleClass('open');
+            });*/
         });
     };
 

@@ -9595,6 +9595,9 @@ footer.page-footer {
 .teal-text {
   color: #018a75 !important;
 }
+#menu-toggle {
+  display: none;
+}
 .carousel-card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -10375,10 +10378,10 @@ canvas {
 #nav-icon4 span {
   display: block;
   position: absolute;
-  height: 9px;
+  height: 5px;
   width: 100%;
   background: white;
-  border-radius: 9px;
+  border-radius: 2px;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -10394,10 +10397,10 @@ canvas {
   top: 0px;
 }
 #nav-icon1 span:nth-child(2) {
-  top: 18px;
+  top: 15px;
 }
 #nav-icon1 span:nth-child(3) {
-  top: 36px;
+  top: 30px;
 }
 #nav-icon1.open span:nth-child(1) {
   top: 18px;
@@ -10880,6 +10883,16 @@ html[xmlns] .clearfix {
   h3 {
     margin-bottom: 2em;
   }
+  #sidenav {
+    background: white;
+    width: 70%;
+  }
+  #sidenav .sidenav-ul .sidenav-li {
+    display: block;
+  }
+  #sidenav-overlay {
+    z-index: 9 !important;
+  }
   header {
     min-height: 65px;
   }
@@ -10894,23 +10907,33 @@ html[xmlns] .clearfix {
     position: static;
   }
   header .navbar-fixed nav .container .page-title {
-    font-size: 1.5em;
+    font-size: 2em;
     color: white;
+  }
+  header .navbar-fixed nav .container .page-title span {
+    margin: -6px;
+  }
+  header .navbar-fixed #menu-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 12px 12px 13px 12px;
+    margin-right: -10px;
   }
   header #nav-icon1 {
     float: right;
-    margin: 12px 2px 12px 12px;
+    margin: 0px;
     width: 40px;
     height: 30px;
   }
   header #nav-icon1 span {
-    height: 7px;
-  }
-  header #nav-icon1 span:nth-child(3) {
-    top: 28px;
+    height: 5px;
+    box-shadow: 0px 1px 0px #8c8c8c;
   }
   header #nav-icon1 span:nth-child(2) {
-    top: 14px;
+    top: 12px;
+  }
+  header #nav-icon1 span:nth-child(3) {
+    top: 24px;
   }
   .parallax img {
     width: 200%;
@@ -10922,8 +10945,11 @@ html[xmlns] .clearfix {
     top: 0;
   }
   home #home .section .page-title {
-    font-size: 4.5em;
+    font-size: 3.5em;
     color: white;
+  }
+  home #home .section .page-title .rubber-letter {
+    margin: 0px -10px;
   }
   home #home .portrait-frame {
     bottom: -250px;

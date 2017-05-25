@@ -13,10 +13,10 @@
                 <a href="#{{navItem.title}}" class="hvr-outline-in tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img ng-src="{{navItem.img}}" /></a>
             </li>
         </ul>
-        <!--MOBILE-NAV-ITEMS-->
+        <!--MOBILE-NAV-ITEMS
         <ul id="nav-mobile" class="side-nav">
-            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse"> <a data-scroll href="#section-1" class="hvr-outline-in">{{navItem.title}}</a> </li>
-        </ul>
+            <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse"> <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in">{{navItem.title}}</a> </li>
+        </ul>-->
     </nav>
 </div>
 <!-- FIXED NAVBAR -->
@@ -50,7 +50,8 @@
                     <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in rubber-letter tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img ng-src="{{navItem.img}}" /></a>
                 </li>
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse right">
+            <a id="menu-toggle" class="right">
+                <!--data-activates="nav-mobile" -->
                 <div id="nav-icon1">
                     <span></span>
                     <span></span>

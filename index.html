@@ -8,11 +8,13 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/frameworks/materialize.min.css" rel="stylesheet" />
+    <link href="css/frameworks/sidenav.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body ng-controller="myController">
     <yu></yu>
+    <navbar ng-show="contentLoaded"></navbar>
     <header ng-show="contentLoaded"></header>
     <home id="home-top" class="scrollspy" ng-show="contentLoaded"></home>
     <about ng-show="contentLoaded"></about>
@@ -36,6 +38,7 @@
 <!-- SCRIPTS -->
 <script src="js/materialize.min.js"></script>
 <script src="js/scrollreveal.min.js"></script>
+<script src="js/sidenav.min.js"></script>
 <script src="js/nav-reveal.js"></script>
 <!--<script src="js/musicplayer2.js"></script>
 <script src="js/APlayer.min.js"></script>-->

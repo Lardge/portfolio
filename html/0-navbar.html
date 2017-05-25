@@ -1,0 +1,10 @@
+<div id="backdrop"></div>
+<div id="sidenav">
+    <ul class="sidenav-ul">
+        <li ng-repeat="navItem in navItems" class="sidenav-li waves-effect waves-light smooth-entry-reverse">
+            <a class="sidenav-a" data-scroll href="#{{navItem.title}}" ng-click="sidenav.close()">
+                {{navItem.title}}
+            </a>
+        </li>
+    </ul>
+</div>
