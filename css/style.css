@@ -9090,6 +9090,7 @@ header .navbar-fixed nav .container .page-title {
 }
 header .navbar-fixed nav .container .page-title span {
   margin: 0px -7px;
+  transition: 300ms color ease-in-out;
 }
 header .navbar-fixed nav .container .page-title span.space {
   margin: 0px 0px;
@@ -10402,18 +10403,18 @@ canvas {
 #nav-icon1 span:nth-child(3) {
   top: 30px;
 }
-#nav-icon1.open span:nth-child(1) {
+.sn-visible #nav-icon1 span:nth-child(1) {
   top: 18px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
 }
-#nav-icon1.open span:nth-child(2) {
+.sn-visible #nav-icon1 span:nth-child(2) {
   opacity: 0;
   left: -60px;
 }
-#nav-icon1.open span:nth-child(3) {
+.sn-visible #nav-icon1 span:nth-child(3) {
   top: 18px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
@@ -10924,6 +10925,10 @@ html[xmlns] .clearfix {
     margin: 0px;
     width: 40px;
     height: 30px;
+    transition: 100ms margin ease-in-out;
+    /*&.open {
+                margin-top: -4px;
+            }*/
   }
   header #nav-icon1 span {
     height: 5px;
@@ -10934,6 +10939,9 @@ html[xmlns] .clearfix {
   }
   header #nav-icon1 span:nth-child(3) {
     top: 24px;
+  }
+  .sn-visible #nav-icon1 {
+    margin-top: -4px;
   }
   .parallax img {
     width: 200%;
@@ -10993,10 +11001,10 @@ html[xmlns] .clearfix {
   .bounce-in-mobile {
     -webkit-animation-name: bounce-in;
     animation-name: bounce-in;
-    animation-delay: 1750ms;
+    animation-delay: 350ms;
   }
   .contact-form {
-    margin: 50px 20px 50px -20px;
+    margin: 50px 20px 0px;
   }
   .input-field .prefix ~ input {
     width: calc(100% - 4rem);

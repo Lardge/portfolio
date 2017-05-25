@@ -13,10 +13,6 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.getBackgrounds();
             $scope.initializeScrollReveal();
             $scope.initializeWindowScroll();
-
-            /*$('#nav-icon1').click(function () {
-                $(this).toggleClass('open');
-            });*/
         });
     };
 
@@ -43,9 +39,21 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             backdrop: document.getElementById("backdrop")
         });
 
-        document.getElementById("menu-toggle").addEventListener("click", function (e) {
-            e.preventDefault();
-            $scope.sidenav.open(); // or sidenav.close
+        /*document.getElementById("menu-toggle").addEventListener("click", function (e) {
+            if (!$scope.sidenav.isOpened) {
+                $scope.sidenav.open(); // or sidenav.close
+            } else {
+                $scope.sidenav.close();
+            }
+        });*/
+
+        jQuery('#menu-toggle').click(function () {
+            jQuery('#menu-toggle #nav-icon1').toggleClass('open');
+            if (!$scope.sidenav.isOpened) {
+                $scope.sidenav.open(); // or sidenav.close
+            } else {
+                $scope.sidenav.close();
+            }
         });
     };
 
@@ -70,7 +78,7 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
 
         jQuery(window).scroll(function () {
             if (!$scope.windowWidthMobile) {
-                if (jQuery('#home-bg').height() - jQuery(this).scrollTop() >= 100) {
+                if (jQuery('#home-bg').height() - jQuery(this).scrollTop() >= 125) {
                     jQuery("#home").css({
                         "transform": "translate3d(0px," + (jQuery(window).scrollTop()) / 5 + "px, 0px)"
                     });

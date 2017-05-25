@@ -171,6 +171,7 @@ header {
                     font-size: 2.5em;
                     span {
                         margin: 0px -7px;
+                        transition: 300ms color ease-in-out;
                         &.space {
                             margin: 0px 0px;
                         }
@@ -1702,7 +1703,7 @@ canvas {
     top: 30px;
 }
 
-#nav-icon1.open span:nth-child(1) {
+.sn-visible #nav-icon1 span:nth-child(1) {
     top: 18px;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
@@ -1710,12 +1711,12 @@ canvas {
     transform: rotate(135deg);
 }
 
-#nav-icon1.open span:nth-child(2) {
+.sn-visible #nav-icon1 span:nth-child(2) {
     opacity: 0;
     left: -60px;
 }
 
-#nav-icon1.open span:nth-child(3) {
+.sn-visible #nav-icon1 span:nth-child(3) {
     top: 18px;
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);

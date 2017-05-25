@@ -14,7 +14,7 @@
 .sn-visible .sn-backdrop {
     display: block;
     position: fixed;
-    pointer-events: all;
+    z-index: 10;
 }
 
 .sn-sidenav {
