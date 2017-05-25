@@ -64,7 +64,7 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         });
         sr.reveal('.timeline-event');
         sr.reveal('h1');
-        sr.reveal('h2');
+        //sr.reveal('h2');
         sr.reveal('h3');
         sr.reveal('#fun .section .content');
         sr.reveal('#contact .section .content');
