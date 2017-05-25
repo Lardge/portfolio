@@ -14,18 +14,6 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.initializeScrollReveal();
             $scope.initializeWindowScroll();
 
-            $scope.sidenav = new Sidenav({
-                content: document.getElementById("contact"),
-                sidenav: document.getElementById("sidenav"),
-                backdrop: document.getElementById("backdrop")
-            });
-
-            document.getElementById("menu-toggle").addEventListener("click", function (e) {
-                e.preventDefault();
-                $scope.sidenav.open(); // or sidenav.close
-
-            });
-
             /*$('#nav-icon1').click(function () {
                 $(this).toggleClass('open');
             });*/
@@ -39,13 +27,27 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         if (!$scope.contentLoaded) {
             console.log("LOADING DONE!");
             $timeout(function () {
-                $scope.initializeRubberLetter();
                 $scope.contentLoaded = true;
+                $scope.initializeRubberLetter();
+                $scope.initializeSideNav();
                 $scope.$apply();
                 jQuery('.parallax').parallax();
             }, 250);
         }
     });
+
+    $scope.initializeSideNav = function () {
+        $scope.sidenav = new Sidenav({
+            content: document.getElementById("home"),
+            sidenav: document.getElementById("sidenav"),
+            backdrop: document.getElementById("backdrop")
+        });
+
+        document.getElementById("menu-toggle").addEventListener("click", function (e) {
+            e.preventDefault();
+            $scope.sidenav.open(); // or sidenav.close
+        });
+    };
 
     //INITIALIZE SCROLL REVEAL
     $scope.initializeScrollReveal = function () {
