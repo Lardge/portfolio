@@ -40,15 +40,24 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             });
         };
 
+        $scope.colorArray = ["#F44336", "#9C27B0", "#3F51B5", "#009688", "#3F51B5", "#8BC34A", "#FF5722"];
+
+
         //CHANGE BACKGROUND ON ALL PLACES
         $scope.changeBackground = function (bgItem) {
-            angular.element(document.querySelector('#home-bg')).css('background-image', 'url(' + bgItem.imgUrl + ')');
-            angular.element(document.querySelector('#home-bg img')).attr("src", bgItem.imgUrl);
+            //Change letter colors
+            angular.forEach($('.page-title span'), function (letter) {
+                $scope.randomColor = $scope.colorArray[Math.floor(Math.random() * $scope.colorArray.length)];
+                $(letter).css('color', $scope.randomColor);
+            });
+            //transiotjion home img src change
+            $('#home-bg img').fadeOut(function () {
+                $(this).attr('src', bgItem.imgUrl).fadeIn();
+                $('.page-title span').css('color', 'white');
+            });
             angular.element(document.querySelector('header .navbar-fixed nav')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
             angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
-            //angular.element(document.querySelector('.material-tooltip .backdrop')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
             angular.element(document.querySelector('.submit-btn')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
-            angular.element(document.querySelector('.music-player .controls')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         };
 
         //SET BACKGROUND ON PAGE LOAD

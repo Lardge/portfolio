@@ -9201,6 +9201,7 @@ home #home .page-title div {
   line-height: 110%;
 }
 home #home .page-title .rubber-letter {
+  transition: 300ms color ease-in-out;
   display: inline-block;
   cursor: pointer;
   -webkit-animation-duration: 1s;
