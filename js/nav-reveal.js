@@ -13,12 +13,18 @@
             }
         }
         if ($('#home-bg').height() - $(this).scrollTop() <= 150) {
-            $('.portrait-frame').removeClass('smooth-entry-reverse-portrait');
-            setTimeout(function () {
-                $('.portrait-frame').addClass('portraitMove');
-            }, 1);
+            $("#home-bg img").css({
+                "filter": "blur(" + ((($(window).scrollTop()) / 25)) + "px)"
+            });
+            $(".portrait-frame").css({
+                "width": 250 - (150 / 7) + "px !important",
+                "height": 250 - (150 / 7) + "px !important",
+                "bottom": -(150 / 500) - 480 + "px !important"
+            });
         } else {
-            $('.portrait-frame').removeClass('portraitMove');
-        }
+            $("#home-bg img").css({
+                "filter": "blur(0px)"
+            });
+        };
     });
 })(jQuery);

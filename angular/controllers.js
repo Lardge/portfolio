@@ -77,27 +77,32 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $('#nav-icon1').click(function () {
                 $(this).toggleClass('open');
             });
+            $(window).resize(function () {
+                $scope.windowWidthMobile = ($(window).width() <= 800);
+            });
+            $(window).scroll(function () {
+                $("#home").css({
+                    "transform": "translate3d(0px," + ($(window).scrollTop()) / 5 + "px, 0px)"
+                });
+                $("#home-bg img").css({
+                    "filter": "blur(" + ((($(window).scrollTop()) / 15) - 11) + "px)"
+                });
+                if ($scope.windowWidthMobile) {
+                    $(".portrait-frame").css({
+                        "width": 200 - ($(window).scrollTop()) / 7 + "px",
+                        "height": 200 - ($(window).scrollTop()) / 7 + "px",
+                        "bottom": -(($(window).scrollTop()) / 500) - 250 + "px"
+                    });
+                } else {
+
+                    $(".portrait-frame").css({
+                        "width": 250 - ($(window).scrollTop()) / 7 + "px",
+                        "height": 250 - ($(window).scrollTop()) / 7 + "px",
+                        "bottom": -(($(window).scrollTop()) / 500) - 480 + "px"
+                    });
+                }
+            });
         });
-
-
-        //        $scope.isLoading = function () {
-        //            return $http.pendingRequests.length > 0;
-        //        };
-        //
-        //        $scope.$watch($scope.isLoading, function (hasPending) {
-        //            if (hasPending || !$rootScope.imagesLoaded) {
-        //                console.log("HAS PEDNING REQUESTS");
-        //            } else {
-        //                $timeout(function () {
-        //                    if ($http.pendingRequests.length === 0) {
-        //                        console.log("LOADING DONE!");
-        //                        $scope.initializeRubberLetter();
-        //                        $scope.contentLoaded = true;
-        //                        //$scope.initializeMusicPlayer();
-        //                    }
-        //                }, 500);
-        //            }
-        //        });
 
         //initializeMusicPlayer
         $scope.initializeMusicPlayer = function () {

@@ -2,7 +2,7 @@
     "navItems": [
         {
             "id": "1",
-            "title": "home",
+            "title": "home-top",
             "img": "img/svg/home-new5.svg",
             "toolTip": "Let's go home",
             "delay": "100"

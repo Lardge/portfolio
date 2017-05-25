@@ -9223,9 +9223,6 @@ home #home .portrait-frame {
   background: url('/img/portfolio/portarit.jpg');
   background-size: cover;
   filter: contrast(150%);
-  -webkit-transition: all 0.4s cubic-bezier(0.5, 0.5, 0.5, 1.5);
-  transition: all 0.4s cubic-bezier(0.6, -2, 0.4, 2);
-  transition-delay: 200ms;
   cursor: pointer;
 }
 home #home .portrait-frame.small {
@@ -10922,6 +10919,15 @@ html[xmlns] .clearfix {
   }
   home #home .section {
     top: 0;
+  }
+  home #home .section .page-title {
+    font-size: 4.5em;
+    color: white;
+  }
+  home #home .portrait-frame {
+    bottom: -250px;
+    width: 200px;
+    height: 200px;
   }
   about #about h2 {
     margin-bottom: 10px;
