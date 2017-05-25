@@ -94,13 +94,20 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.windowWidthMobile = ($(window).width() <= 800);
 
             $(window).scroll(function () {
-                if (!$scope.windowWidthMobile && ($('#home-bg').height() - $(this).scrollTop() >= 150)) {
+                if (!$scope.windowWidthMobile) {
+                    if (($('#home-bg').height() - $(this).scrollTop()) <= 300 && ($('#home-bg').height() - $(this).scrollTop()) >= -50) {
+                        $("#home-bg img").css({
+                            "filter": "blur(" + ((($(window).scrollTop()) / 15) - 20) + "px)"
+                        });
+                    } else {
+                        $("#home-bg img").css({
+                            "filter": "blur(0px)"
+                        });
+                    }
                     $("#home").css({
                         "transform": "translate3d(0px," + ($(window).scrollTop()) / 5 + "px, 0px)"
                     });
-                    $("#home-bg img").css({
-                        "filter": "blur(" + ((($(window).scrollTop()) / 15) - 11) + "px)"
-                    });
+
                     $(".portrait-frame").css({
                         "width": 250 - ($(window).scrollTop()) / 7 + "px",
                         "height": 250 - ($(window).scrollTop()) / 7 + "px",

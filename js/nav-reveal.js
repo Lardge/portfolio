@@ -12,7 +12,7 @@
                 $('.navbar-fixed').removeClass('bounce-in').addClass('bounce-out');
             }
         }
-        if ($('#home-bg').height() - $(this).scrollTop() <= 150) {
+        /*if ($('#home-bg').height() - $(this).scrollTop() <= 150) {
             $("#home-bg img").css({
                 "filter": "blur(" + ((($(window).scrollTop()) / 25)) + "px)"
             });
@@ -25,6 +25,6 @@
             $("#home-bg img").css({
                 "filter": "blur(0px)"
             });
-        };
+        };*/
     });
 })(jQuery);
