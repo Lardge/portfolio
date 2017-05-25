@@ -77,13 +77,15 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $('#nav-icon1').click(function () {
                 $(this).toggleClass('open');
             });
+
             $(window).resize(function () {
                 $scope.windowWidthMobile = ($(window).width() <= 800);
             });
+
+            $scope.windowWidthMobile = ($(window).width() <= 800);
+
             $(window).scroll(function () {
-                $("#home").css({
-                    "transform": "translate3d(0px," + ($(window).scrollTop()) / 5 + "px, 0px)"
-                });
+
                 $("#home-bg img").css({
                     "filter": "blur(" + ((($(window).scrollTop()) / 15) - 11) + "px)"
                 });
@@ -94,6 +96,9 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                         "bottom": -(($(window).scrollTop()) / 500) - 250 + "px"
                     });*/
                 } else {
+                    $("#home").css({
+                        "transform": "translate3d(0px," + ($(window).scrollTop()) / 5 + "px, 0px)"
+                    });
                     $(".portrait-frame").css({
                         "width": 250 - ($(window).scrollTop()) / 7 + "px",
                         "height": 250 - ($(window).scrollTop()) / 7 + "px",
