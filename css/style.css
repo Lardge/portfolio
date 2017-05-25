@@ -9061,7 +9061,7 @@ header .navbar-fixed nav {
   max-width: 100%;
   height: 90px;
   padding-top: 10px;
-  background-size: cover;
+  background-size: 110%;
 }
 header .navbar-fixed nav .rubber-letter {
   -webkit-animation-duration: 1s;

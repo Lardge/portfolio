@@ -20,8 +20,10 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                 backdrop: document.getElementById("backdrop")
             });
 
-            document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("menu-toggle").addEventListener("click", function (e) {
+                e.preventDefault();
                 $scope.sidenav.open(); // or sidenav.close
+
             });
 
             /*$('#nav-icon1').click(function () {
