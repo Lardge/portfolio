@@ -88,13 +88,12 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                     "filter": "blur(" + ((($(window).scrollTop()) / 15) - 11) + "px)"
                 });
                 if ($scope.windowWidthMobile) {
-                    $(".portrait-frame").css({
+                    /*$(".portrait-frame").css({
                         "width": 200 - ($(window).scrollTop()) / 7 + "px",
                         "height": 200 - ($(window).scrollTop()) / 7 + "px",
                         "bottom": -(($(window).scrollTop()) / 500) - 250 + "px"
-                    });
+                    });*/
                 } else {
-
                     $(".portrait-frame").css({
                         "width": 250 - ($(window).scrollTop()) / 7 + "px",
                         "height": 250 - ($(window).scrollTop()) / 7 + "px",
