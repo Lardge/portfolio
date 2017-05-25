@@ -37,7 +37,7 @@
 <polygon fill="#E9ED9D" points="-281.811,67 685.945,639 -67.008,1255 -423.489,847 "/>
       <defs>
     <filter id="f1" x="0" y="0">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" />
     </filter>
   </defs>
 </svg>
