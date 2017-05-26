@@ -10394,7 +10394,7 @@ canvas {
   height: 5px;
   width: 100%;
   background: white;
-  border-radius: 2px;
+  border-radius: 1px;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
