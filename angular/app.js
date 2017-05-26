@@ -1,6 +1,6 @@
 'use strict';
 /* App Module */
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
     $routeProvider.when("/", {
