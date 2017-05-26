@@ -10415,24 +10415,26 @@ canvas {
 #nav-icon1 span:nth-child(3) {
   top: 30px;
 }
-.sn-visible #nav-icon1 span:nth-child(1) {
-  top: 18px;
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
+/*.sn-visible #nav-icon1 span:nth-child(1) {
+    top: 18px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
+
 .sn-visible #nav-icon1 span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
+    opacity: 0;
+    left: -60px;
 }
+
 .sn-visible #nav-icon1 span:nth-child(3) {
-  top: 18px;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
+    top: 18px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}*/
 .covers {
   padding: 0px !important;
   margin-top: 50px;
@@ -10929,8 +10931,9 @@ html[xmlns] .clearfix {
   header .navbar-fixed #menu-toggle {
     display: block;
     cursor: pointer;
-    padding: 12px 12px 13px 12px;
-    margin-right: -10px;
+    padding: 12px 15px 13px;
+    margin-left: -12px;
+    background: rgba(255, 255, 255, 0.25);
   }
   header #nav-icon1 {
     float: right;
@@ -10944,7 +10947,6 @@ html[xmlns] .clearfix {
   }
   header #nav-icon1 span {
     height: 5px;
-    box-shadow: 0px 1px 0px #8c8c8c;
   }
   header #nav-icon1 span:nth-child(2) {
     top: 12px;
@@ -10952,9 +10954,9 @@ html[xmlns] .clearfix {
   header #nav-icon1 span:nth-child(3) {
     top: 24px;
   }
-  .sn-visible #nav-icon1 {
-    margin-top: -4px;
-  }
+  /*.sn-visible #nav-icon1 {
+        margin-top: -4px;
+    }*/
   .parallax img {
     width: 200%;
   }
