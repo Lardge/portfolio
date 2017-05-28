@@ -13,6 +13,10 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.getBackgrounds();
             $scope.initializeScrollReveal();
             $scope.initializeWindowScroll();
+
+            jQuery(".bf-logo").click(function () {
+                jQuery("header .page-title").toggleClass('smooth-entry-reverse smooth-leave-reverse');
+            });
         });
     };
 
@@ -82,10 +86,11 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                     jQuery("#home").css({
                         "transform": "translate3d(0px," + (jQuery(window).scrollTop()) / 5 + "px, 0px)"
                     });
+
                     jQuery(".portrait-frame").css({
-                        "width": 250 - (jQuery(window).scrollTop()) / 7 + "px",
-                        "height": 250 - (jQuery(window).scrollTop()) / 7 + "px",
-                        "bottom": -((jQuery(window).scrollTop()) / 500) - 480 + "px"
+                        "width": 250 - (jQuery(window).scrollTop()) / 4.13 + "px",
+                        "height": 250 - (jQuery(window).scrollTop()) / 4.13 + "px",
+                        "bottom": -((jQuery(window).scrollTop()) / 10) - 480 + "px"
                     });
                 }
                 if ((jQuery('#home-bg').height() - jQuery(this).scrollTop()) <= 300 && (jQuery('#home-bg').height() - jQuery(this).scrollTop()) >= -50) {

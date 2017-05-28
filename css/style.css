@@ -7719,6 +7719,13 @@ keyframes
   -moz-animation: smooth-entry-reverse 0.5s;
   animation: smooth-entry-reverse 0.5s;
 }
+.smooth-leave-reverse {
+  animation-fill-mode: forwards !important;
+  opacity: 1;
+  -webkit-animation: smooth-leave-reverse 0.5s;
+  -moz-animation: smooth-leave-reverse 0.5s;
+  animation: smooth-leave-reverse 0.5s;
+}
 .smooth-entry-title {
   animation-fill-mode: forwards !important;
   opacity: 0;
@@ -7740,10 +7747,25 @@ keyframes
   -moz-animation: smooth-entry-reverse-portrait 0.5s;
   animation: smooth-entry-reverse-portrait 0.5s;
 }
+@-webkit-keyframes smooth-leave-reverse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+  99.9% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
 @-webkit-keyframes smooth-entry {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-1.4em);
+    -webkit-transform: translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -7753,7 +7775,7 @@ keyframes
 @-moz-keyframes smooth-entry {
   0% {
     opacity: 0;
-    -moz-transform: translateY(-1.4em);
+    -moz-transform: translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -7781,7 +7803,7 @@ keyframes
 @-webkit-keyframes smooth-entry-reverse {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(2em);
+    -webkit-transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -7791,7 +7813,7 @@ keyframes
 @-moz-keyframes smooth-entry-reverse {
   0% {
     opacity: 0;
-    -moz-transform: translateY(2em);
+    -moz-transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -7801,11 +7823,11 @@ keyframes
 @keyframes smooth-entry-reverse {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(2em);
-    -moz-transform: translateY(2em);
-    -ms-transform: translateY(2em);
-    -o-transform: translateY(2em);
-    transform: translateY(2em);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -9091,9 +9113,8 @@ header .navbar-fixed nav .container .page-title {
   font-family: "KGHappy";
   position: absolute;
   cursor: default;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  top: 10px;
+  left: 75px;
   font-size: 2.5em;
 }
 header .navbar-fixed nav .container .page-title span {
@@ -9102,6 +9123,9 @@ header .navbar-fixed nav .container .page-title span {
 }
 header .navbar-fixed nav .container .page-title span.space {
   margin: 0px 0px;
+}
+header .navbar-fixed nav .container .page-title.visible {
+  display: block;
 }
 header .navbar-fixed nav .container ul {
   position: absolute;
@@ -9624,6 +9648,14 @@ footer.page-footer {
   color: #444;
   top: 10%;
   width: 100%;
+}
+.bf-logo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 /* box shadow */
 #sun {
