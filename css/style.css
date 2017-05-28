@@ -9190,6 +9190,12 @@ header nav ul.link-list {
   padding-top: 15px;
   line-height: 65px;
 }
+header nav ul.link-list.mobile {
+  display: none;
+}
+header nav ul.link-list.desktop {
+  display: block;
+}
 header nav ul.link-list li {
   border-radius: 50%;
   line-height: 65px;
@@ -10954,6 +10960,7 @@ html[xmlns] .clearfix {
   }
   header .navbar-fixed {
     height: 65px;
+    top: 0px;
   }
   header .navbar-fixed nav {
     height: 65px;
@@ -10980,9 +10987,15 @@ html[xmlns] .clearfix {
     float: none !important;
     width: 326px;
     overflow: auto;
-    top: 5px;
+    top: 0px;
     transform: translateX(-50%);
     left: 50%;
+  }
+  header .navbar-fixed nav .container .link-list.mobile {
+    display: block;
+  }
+  header .navbar-fixed nav .container .link-list.desktop {
+    display: none;
   }
   header .navbar-fixed #menu-toggle {
     display: block;

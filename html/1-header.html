@@ -47,9 +47,14 @@
                 <span class="rubber-letter">i</span>
                 <span class="rubber-letter">i</span>
                 <span class="rubber-letter">s</span></div>
-            <ul class="link-list right">
+            <ul class="link-list desktop right">
                 <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse">
                     <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in rubber-letter tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{navItem.toolTip}}"> <img ng-src="{{navItem.img}}" /></a>
+                </li>
+            </ul>
+            <ul class="link-list mobile">
+                <li ng-repeat="navItem in navItems" class="waves-effect waves-light smooth-entry-reverse">
+                    <a data-scroll href="#{{navItem.title}}" class="hvr-outline-in" data-position="bottom" data-delay="50"> <img ng-src="{{navItem.img}}" /></a>
                 </li>
             </ul>
             <a id="menu-toggle" class="waves-effect waves-light left hide-on-med-and-down">
