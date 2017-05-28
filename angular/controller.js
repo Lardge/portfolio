@@ -81,21 +81,27 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
         });
 
         jQuery(window).scroll(function () {
+            var scrollPosition = jQuery(window).scrollTop();
             if (!$scope.windowWidthMobile) {
-                if (jQuery('#home-bg').height() - jQuery(this).scrollTop() >= 125) {
+                if (jQuery('#home-bg').height() - scrollPosition >= 125) {
                     jQuery("#home").css({
-                        "transform": "translate3d(0px," + (jQuery(window).scrollTop()) / 5 + "px, 0px)"
+                        "transform": "translate3d(0px," + (scrollPosition / 5) + "px, 0px)"
                     });
 
                     jQuery(".portrait-frame").css({
-                        "width": 250 - (jQuery(window).scrollTop()) / 4.13 + "px",
-                        "height": 250 - (jQuery(window).scrollTop()) / 4.13 + "px",
-                        "bottom": -((jQuery(window).scrollTop()) / 10) - 480 + "px"
+                        "width": 250 - (scrollPosition / 4.13) + "px",
+                        "height": 250 - (scrollPosition / 4.13) + "px",
+                        "bottom": -(scrollPosition / 10) - 480 + "px"
+                    });
+                } else {
+                    jQuery(".portrait-frame").css({
+                        "width": "125px",
+                        "height": "125px",
                     });
                 }
                 if ((jQuery('#home-bg').height() - jQuery(this).scrollTop()) <= 300 && (jQuery('#home-bg').height() - jQuery(this).scrollTop()) >= -50) {
                     jQuery("#home-bg img").css({
-                        "filter": "blur(" + (((jQuery(window).scrollTop()) / 15) - 20) + "px)"
+                        "filter": "blur(" + ((scrollPosition / 15) - 20) + "px)"
                     });
 
                 } else {
