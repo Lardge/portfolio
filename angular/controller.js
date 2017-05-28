@@ -80,9 +80,18 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.windowWidthMobile = (jQuery(window).width() <= 800);
         });
 
-        jQuery(window).scroll(function () {
-            var scrollPosition = jQuery(window).scrollTop();
-            if (!$scope.windowWidthMobile) {
+        //f  mobile, change scrollspy offset
+        if ($scope.windowWidthMobile) {
+            jQuery('.scrollspy').scrollSpy({
+                scrollOffset: 60
+            });
+        }
+
+        //If desktop, do scroll recaculations
+        if (!$scope.windowWidthMobile) {
+            jQuery(window).scroll(function () {
+                var scrollPosition = jQuery(window).scrollTop();
+
                 if (jQuery('#home-bg').height() - scrollPosition >= 125) {
                     jQuery("#home").css({
                         "transform": "translate3d(0px," + (scrollPosition / 5) + "px, 0px)"
@@ -109,12 +118,9 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                         "filter": "blur(0px)"
                     });
                 }
-            } else {
-                jQuery('.scrollspy').scrollSpy({
-                    scrollOffset: 60
-                });
-            }
-        });
+
+            });
+        }
     };
 
     //initializeMusicPlayer
