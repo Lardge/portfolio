@@ -38,12 +38,26 @@
                     position: static;
                 }
                 .container {
+                    display: block;
                     .page-title {
                         font-size: 2em;
                         color: white;
                         span {
                             margin: -6px;
                         }
+                        /*:top: 0;
+                        transform: none;
+                        right: 0;*/
+                    }
+                    .link-list {
+                        //margin: 0 auto;
+                        position: fixed;
+                        float: none !important;
+                        width: 326px;
+                        overflow: auto;
+                        top: 5px;
+                        transform: translateX(-50%);
+                        left: 50%;
                     }
                 }
             }
@@ -102,6 +116,7 @@
                 bottom: -250px;
                 width: 200px;
                 height: 200px;
+                background-image: url(/img/portfolio/portarit-thumb-mobile.jpg);
             }
         }
     }
@@ -109,6 +124,19 @@
         #about {
             h2 {
                 margin-bottom: 10px;
+                &.about {
+                    display: none;
+                    opacity: 0.04;
+                    width: 120%;
+                    top: -170px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    z-index: -1;
+                }
+            }
+            .section {
+                margin-top: 20px;
             }
             .s12 {
                 a {
@@ -141,6 +169,17 @@
             .content {
                 margin: 0px;
             }
+        }
+    }
+    contact {
+        .bubble-svg {
+            position: absolute;
+            top: -100px;
+            left: -50%;
+            width: 250%;
+            opacity: 0.10;
+            z-index: -1;
+            pointer-events: none;
         }
     }
     footer {

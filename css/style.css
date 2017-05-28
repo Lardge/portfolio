@@ -2337,7 +2337,7 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 1;
+  opacity: 0;
 }
 /* Round Corners */
 .hvr-round-corners {
@@ -9291,6 +9291,14 @@ about #about h2 {
   color: #333;
   font-size: 1.5em;
 }
+about #about h2.about {
+  opacity: 0.08;
+  width: 400px;
+  top: 25px;
+  left: -75px;
+  position: absolute;
+  z-index: -1;
+}
 about #about .left {
   text-align: left;
 }
@@ -10954,12 +10962,27 @@ html[xmlns] .clearfix {
     width: 100%;
     position: static;
   }
+  header .navbar-fixed nav .container {
+    display: block;
+  }
   header .navbar-fixed nav .container .page-title {
     font-size: 2em;
     color: white;
+    /*:top: 0;
+                        transform: none;
+                        right: 0;*/
   }
   header .navbar-fixed nav .container .page-title span {
     margin: -6px;
+  }
+  header .navbar-fixed nav .container .link-list {
+    position: fixed;
+    float: none !important;
+    width: 326px;
+    overflow: auto;
+    top: 5px;
+    transform: translateX(-50%);
+    left: 50%;
   }
   header .navbar-fixed #menu-toggle {
     display: block;
@@ -11010,9 +11033,23 @@ html[xmlns] .clearfix {
     bottom: -250px;
     width: 200px;
     height: 200px;
+    background-image: url(/img/portfolio/portarit-thumb-mobile.jpg);
   }
   about #about h2 {
     margin-bottom: 10px;
+  }
+  about #about h2.about {
+    display: none;
+    opacity: 0.04;
+    width: 120%;
+    top: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: -1;
+  }
+  about #about .section {
+    margin-top: 20px;
   }
   about #about .s12 a {
     display: block;
@@ -11034,6 +11071,15 @@ html[xmlns] .clearfix {
   }
   fun #fun .content {
     margin: 0px;
+  }
+  contact .bubble-svg {
+    position: absolute;
+    top: -100px;
+    left: -50%;
+    width: 250%;
+    opacity: 0.10;
+    z-index: -1;
+    pointer-events: none;
   }
   footer .section {
     float: left;
