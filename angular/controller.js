@@ -12,7 +12,6 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.getNavigation();
             $scope.getBackgrounds();
             $scope.initializeScrollReveal();
-            $scope.initializeWindowScroll();
 
             jQuery(".bf-logo").click(function () {
                 jQuery("header .page-title").toggleClass('smooth-entry-reverse smooth-leave-reverse');
@@ -30,9 +29,10 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                 $scope.contentLoaded = true;
                 $scope.initializeRubberLetter();
                 $scope.initializeSideNav();
+                $scope.initializeWindowScroll();
                 $scope.$apply();
                 jQuery('.parallax').parallax();
-            }, 250);
+            }, 500);
         }
     });
 
