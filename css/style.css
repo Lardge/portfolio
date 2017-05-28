@@ -11075,6 +11075,15 @@ html[xmlns] .clearfix {
     width: 100% !important;
     z-index: 1;
   }
+  timeline #timeline .timeline-content .card-image {
+    border-radius: 3px 3px 0px 0px;
+    overflow: hidden;
+  }
+  timeline #timeline .timeline-content .card-image img {
+    width: auto;
+    height: 100%;
+    border-radius: 0px;
+  }
   timeline #timeline .timeline-event {
     padding: 15px 0px;
   }
