@@ -109,6 +109,10 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
                         "filter": "blur(0px)"
                     });
                 }
+            } else {
+                jQuery('.scrollspy').scrollSpy({
+                    scrollOffset: 60
+                });
             }
         });
     };
