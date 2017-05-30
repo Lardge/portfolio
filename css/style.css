@@ -9299,9 +9299,9 @@ about #about h2 {
 }
 about #about h2.about {
   opacity: 0.08;
-  width: 270px;
+  width: 200px;
   top: 25px;
-  left: -75px;
+  left: 0px;
   position: absolute;
   z-index: -1;
 }
@@ -10349,6 +10349,10 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
+}
+.material-tooltip {
+  top: 75px !important;
+  position: fixed !important;
 }
 .animation-delay-100 {
   animation-delay: 100ms;

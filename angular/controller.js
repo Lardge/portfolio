@@ -157,10 +157,12 @@ app.controller('myController', ['$scope', '$rootScope', '$timeout', 'myService',
             $scope.randomColor = $scope.colorArray[Math.floor(Math.random() * $scope.colorArray.length)];
             $(letter).css('color', $scope.randomColor);
         });
+        $('#home').css('box-shadow', '0px 5px 10px white');
         //transiotjion home img src change
         $('#home-bg img').fadeOut(function () {
             $(this).attr('src', bgItem.imgUrl).fadeIn();
             $('.page-title span').css('color', 'white');
+            $('#home').css('box-shadow', '0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)');
         });
         angular.element(document.querySelector('header .navbar-fixed nav')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
         angular.element(document.querySelector('footer.page-footer')).css('background-image', 'url(' + bgItem.imgBlurUrl + ')');
